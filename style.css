@@ -4,6 +4,14 @@ body {
   margin: 0;
   padding: 0;
 }
+#container {
+  height: calc(100vh - 2.9vw - 30px);
+  overflow-y: auto;
+}
+#container::-webkit-scrollbar {
+  display: none;
+}
+
 #red_area {
   background-color: #E32537;
   width: 100%;
@@ -11,9 +19,9 @@ body {
   position: absolute;
   z-index: 1;
 }
-#gray_area {
-  background-color: #969696;
-  width: 100%;
+#mid_area {
+  background-color: #FFFFFF;
+  width: 150%;
   height: 100%;
   position: absolute;
   right: -150%;
@@ -54,7 +62,7 @@ body {
   white-space: nowrap;
 }
 .txtline div {
-  padding: 0 10px;
+  padding-inline: 10px;
 }
 #red_txt .txtline div{
   animation: loopText1 60s linear infinite;
@@ -112,7 +120,7 @@ body {
 .after .maintxt {
   display: none;
 }
-#top_nav {
+#top_nav, .category {
   background-color: black;
   font-size: calc(2.9vw - 10px);
   color: white;
@@ -123,6 +131,16 @@ body {
   transition: 0.5s;
   opacity: 0;
 }
+.category {
+  opacity: 1;
+  margin-block: 1px;
+  cursor: pointer;
+}
+.category div {
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+}
 .nav-content {
   padding: 10px 12px;
 }
@@ -130,26 +148,26 @@ body {
   cursor: pointer;
 }
 
-#title {
+#title{
   display: flex;
   width: 60%;
   justify-content: space-evenly;
   align-items: center;
   transition: 1s;
 }
-#title div {
+#title div, .category-teams div {
   width: 100%;
   text-align: center;
 }
-#Rtitle {
+#Rtitle, .red-team {
   color:#E32537;
 }
-#Btitle {
+#Btitle, .blue-team {
   color:#1DC1DD;
 }
 
 .text-box {
-  max-width: 500px;
+  max-width: 960px;
   font-size: 20px;
   font-weight: 500;
   margin: auto;
@@ -165,6 +183,7 @@ body {
 }
 .table {
   display: flex;
+  align-items: center;
   border-bottom: 1px solid black;
   cursor: pointer;
 }
@@ -182,7 +201,7 @@ body {
   background-color:white;
 }
 
-#footer {
+#bottom {
   position: absolute;
   bottom: 0;
   background-color: white;
@@ -195,29 +214,42 @@ body {
   border-top: 1px solid black;
   opacity: 0;
 }
-.footer-line {
+.bottom-line {
   width: 100%;
   display: flex;
   white-space: nowrap;
 }
-.footer-line div {
+.bottom-line div {
   animation: loopText3 60s linear infinite;
   animation-delay: -60s;
 }
-.footer-line div:nth-child(2) {
+.bottom-line div:nth-child(2) {
   animation: loopText4 60s linear infinite;
   animation-delay: -30s;
   transform: translateX(-200%);
 }
-.footer-txt {
+.bottom-txt {
   padding: 0 2em;
 }
 .page {
   opacity: 0;
   transition: 0.2s;
 }
+#categories {
+  transition: 0.2s;
+}
+.content-page {
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+}
+.category:hover {
+  background-color: white;
+  color: black;
+}
+
 @media screen and (max-width: 980px){
-  #top_nav {
+  #top_nav, .category {
     font-size: 18px;
   }
 }

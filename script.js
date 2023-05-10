@@ -1,14 +1,12 @@
 const redArea = document.querySelector('#red_area');
 const blueArea = document.querySelector('#blue_area');
-const grayArea = document.querySelector('#gray_area');
+const midArea = document.querySelector('#mid_area');
 
 const container = document.querySelector("#container");
 const topArea = document.querySelector('#top_nav');
-const footerArea = document.querySelector('#footer');
+const bottomArea = document.querySelector('#bottom');
 
 const pages = document.querySelectorAll('.page');
-const prevButton = document.querySelector('#prev');
-const nextButton = document.querySelector('#next');
 
 redArea.addEventListener('mouseover', () => {
     if (!redArea.parentNode.classList.contains('after')) {
@@ -42,32 +40,25 @@ redArea.addEventListener('click', () => {
     }
 });
 
-//table 데이터
-const data = {
-    data1: [63,52,8,3],
-    data2: [26,22,2,2],
-    data3: [20,16,4,0],
-    data4: [17,14,2,1],
-    data5: ['종합', 'K리그1', '리그컵', 'FA컵']
-};
-
 // table 클릭 이벤트
 const tables = document.querySelectorAll('.table');
 let selectedIndex = 0;
 
-function updateAreas(index) {
-    blueArea.style.right = data.data4[index] / data.data1[index] * 100 - 150 + '%';
+function updateAreas() {
+    let spans = document.querySelectorAll('.table.selected span');
+    let data = Array.from(spans).map(span => span.textContent);
+    console.log(data);
+    blueArea.style.right = data[3] / data[0] * 100 - 150 + '%';
     blueArea.style.transform = 'skew(-16deg)';
-    if (data.data3[index] !== 0) {
-      grayArea.style.right = data.data3[index] / data.data1[index] * 100 - 71 + '%';
+    if (data[2] !== 0) {
+        midArea.style.right = (parseInt(data[2])+parseInt(data[3])) / data[0] * 100 - 150 + '%';
     } else {
-      grayArea.style.right = '-100%';
+        midArea.style.right = '-100%';
     }
   }
   
 function setSelectedIndex(index) {
     selectedIndex = index;
-    updateAreas(index);
     tables.forEach((otherTable, otherIndex) => {
         if (otherIndex !== selectedIndex) {
         otherTable.classList.remove('selected');
@@ -75,6 +66,7 @@ function setSelectedIndex(index) {
         otherTable.classList.add('selected');
         }
     });
+    updateAreas();
 }
   
   tables.forEach((table, index) => {
@@ -85,39 +77,85 @@ function setSelectedIndex(index) {
 
 
 //title 데이터
-const title = {
-    red: ['　', 'FC 서울', '포항 스틸러스', '고려대학교'],
-    mid: ['발견', 'vs', 'vs', 'vs'],
-    blue: ['　', '인천 유나이티드 FC', '울산 현대', '연세대학교']
+const ptitle = {
+    red: ['　', 'Red', '　'],
+    mid: ['발견', 'vs', '진실'],
+    blue: ['　', 'Blue', '　']
 }
+const title = {
+    first: ['축구', '축구', '야구', '야구', '농구', '대학 스포츠 대항전', '대학 스포츠 대항전', '리그 오브 레전드', '한국 정치 진영', '콜라', '한국 전자제품'],
+    red: ['FC 서울', '포항 스틸러스', 'KIA 타이거즈', '롯데 자이언츠', '서울 삼성 썬더스', '고려대학교', '포항공대', '레드 진영', '보수당', '코카콜라', 'LG전자'],
+    mid: ['vs'],
+    blue: ['인천 유나이티드 FC', '울산 현대', '삼성 라이온즈', 'NC 다이노스', '창원 LG 세이커스', '연세대학교', '카이스트', '블루 진영', '민주당', '펩시', '삼성전자'],
+    last: ['　', '　', '　', '　', '　']
+}
+const categoryBox = document.querySelector('#categories');
+
+let categoryList = '';
+for(let i = 0; i<11; i++){
+    categoryList += `
+    <div class="category">
+    <div class="info">${title.first[i]}</div>
+    <div class="red-team">${title.red[i]}</div>
+    <div id="mid-text">vs</div>
+    <div class="blue-team">${title.blue[i]}</div>
+    <div class="next-button">　</div>
+    </div>`
+}
+categoryBox.innerHTML = categoryList;
+categoryBox.addEventListener('click', () => {
+    categoryBox.classList.add('page-show');
+})
+
 const titleArea = document.querySelector('#title');
 const Rtitle = document.querySelector('#Rtitle');
 const Mtitle = document.querySelector('#Mtitle');
 const Btitle = document.querySelector('#Btitle');
 
-
+function updatePTitle(index) {
+    Rtitle.textContent = ptitle.red[index];
+    Mtitle.textContent = ptitle.mid[index];
+    Btitle.textContent = ptitle.blue[index];
+    console.log('1'+ Rtitle.textContent);
+}
 function updateTitle(index) {
     Rtitle.textContent = title.red[index];
-    Mtitle.textContent = title.mid[index];
+    Mtitle.textContent = "vs";
     Btitle.textContent = title.blue[index];
+    console.log('2'+Rtitle.textContent);
 }
 
-//footer 데이터
-const footer = ['2005년 영국의 저명한 과학 학술지 Nature',
-'2023년 2월 기준 한국 축구 경인 더비 전적']
-const footerText = document.querySelectorAll('.footer-txt');
-function updateFooter(index) {
+//bottom 데이터
+const pbottom = ['스포츠에서 이기려면 빨간 유니폼을 입어라',
+'RED vs BLUE 당신의 선택',
+'그들의 연구는 통계학적으로 잘못되었다']
+const bottom = ['2023년 2월 기준 한국 축구 경인 더비 전적',
+'2023년 4월 22일 기준 한국 축구 동해안 더비 전적', 'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적', '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적', '2022-23시즌 기준 한국프로농구 전자 더비 전적',
+'대학교 스포츠 대항전 연고전-고연전', '대학교 스포츠 대항전 카포전-포카전 2002 - 2022', '리그 오브 레전드 월드 챔피언십', '대한민국의 정치 진영', '세기의 라이벌 2023년 1분기 재무 비교', '대한민국 대표 전자 기업 2023년 1분기 재무 비교']
+const bottomText = document.querySelectorAll('.bottom-txt');
+function updatePBottom(index) {
     for (i = 0; i < 4; i++) {
-        footerText[i].textContent = footer[index];
+        bottomText[i].textContent = pbottom[index];
+    }
+}
+function updateBottom(index) {
+    for (i = 0; i < 4; i++) {
+        bottomText[i].textContent = bottom[index];
     }
 }
 //page 이벤트
+const topPrev = document.querySelector('#top_prev');
+const topNext = document.querySelector('#top_next');
+
+
 let currentPageIndex = 0;
 
 function showPage(pageIndex) {
   pages.forEach((page, index) => {
-    updateTitle(pageIndex);
-    updateFooter(pageIndex);
+    if(!categoryBox.classList.contains('page-show')){
+        updatePTitle(pageIndex);
+        updatePBottom(pageIndex);
+    }
     if (index === pageIndex) {
         setTimeout(() => {
             page.style.display = 'block';
@@ -135,10 +173,15 @@ function showPage(pageIndex) {
     }
   });
 }
+const categories = document.querySelectorAll('.category');
+const contentPages = document.querySelectorAll('.content-page');
 
-prevButton.addEventListener('click', () => {
-    updateAreas(selectedIndex);
-    if (currentPageIndex > 0) {
+topPrev.addEventListener('click', () => {
+    if (categoryBox.classList.contains('page-show')) {
+        showPage(currentPageIndex);
+        categoryBox.classList.remove('page-show');
+    }
+    else if (currentPageIndex > 0) {
         currentPageIndex--;
         showPage(currentPageIndex);
     }
@@ -147,23 +190,76 @@ prevButton.addEventListener('click', () => {
     }
 });
 
-nextButton.addEventListener('click', () => {
-    updateAreas(selectedIndex);
+topNext.addEventListener('click', () => {
     if (currentPageIndex < pages.length - 1) {
         currentPageIndex++;
         showPage(currentPageIndex);
     }
 });
 
+
+function showContentPage(index) {
+    //카테고리 숨기기
+    setTimeout(() => {
+        categoryBox.style.opacity = 0;
+    }, 200);
+    setTimeout(() => {
+        categoryBox.style.display = 'none';
+    }, 400);
+    // 해당 content-page 보여주기
+    contentPages[index].classList.add('content-show');
+    setTimeout(() => {
+        contentPages[index].style.display = 'block';
+    }, 400);
+    setTimeout(() => {
+        contentPages[index].style.opacity = 1;
+    }, 600);
+
+    const selectedTable = document.querySelector('.selected');
+    selectedTable.classList.remove('selected');
+    const firstTable = document.querySelectorAll('.content-show .table');
+    firstTable[0].classList.add('selected');
+    updateAreas();
+}
+    
+function hideContentPages() {
+    // 모든 content-page 숨기기
+    contentPages.forEach((contentPage) => {
+    contentPage.classList.remove('content-show');
+    contentPage.style.opacity = 0;
+    setTimeout(() => {
+        contentPage.style.display = 'none';
+    }, 400);
+});
+}
+categories.forEach((category, index) => {
+    category.addEventListener('click', () => {
+    updateTitle(index);
+    updateBottom(index);
+    hideContentPages();
+    showContentPage(index);
+    });
+});
+    
+topPrev.addEventListener('click', () => {
+    hideContentPages();
+    setTimeout(() => {
+        categoryBox.style.display = 'block';
+    }, 200);
+    setTimeout(() => {
+        categoryBox.style.opacity = 1;
+    }, 400);
+});
+
 //page 진입 이벤트
 container.addEventListener('click', () => {
     container.classList.add('after');
     redArea.style.zIndex = '-3';
-    grayArea.style.zIndex = '-2';
+    midArea.style.zIndex = '-2';
     blueArea.style.zIndex = '-1';
     setTimeout(() => {
         topArea.style.opacity = '1';
-        footerArea.style.opacity = '1';
+        bottomArea.style.opacity = '1';
     }, 200);
     showPage(currentPageIndex);
 })

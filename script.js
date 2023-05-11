@@ -1,9 +1,16 @@
-const redArea = document.querySelector('#red_area');
-const blueArea = document.querySelector('#blue_area');
-const midArea = document.querySelector('#mid_area');
+/* 추가/삭제되는 클래스 정리
+category 선택하면 category-box에 page-show 추가, 해당 content-page에 content-show 추가
+선택된 table에 selected 추가
+목록에서 container에 bottom-click 추가
+*/
+let scoreRed = 0;
+let scoreBlue = 0;
+const redArea = document.querySelector('#red-area');
+const blueArea = document.querySelector('#blue-area');
+const midArea = document.querySelector('#mid-area');
 
 const container = document.querySelector("#container");
-const topArea = document.querySelector('#top_nav');
+const topArea = document.querySelector('#top-nav');
 const bottomArea = document.querySelector('#bottom');
 
 const pages = document.querySelectorAll('.page');
@@ -32,13 +39,38 @@ blueArea.addEventListener('click', () => {
     if (!redArea.parentNode.classList.contains('after')) {
         blueArea.style.right = '0%';
         blueArea.style.transform = 'skew(0)';
+        startPage()
+        if(contentPages[11].classList.contains('red-clicked')){
+            contentPages[11].classList.remove('red-clicked');
+            scoreRed--;
+        }
+        contentPages[11].classList.add('blue-clicked');
+        scoreBlue++;
     }
 });
 redArea.addEventListener('click', () => {
     if (!redArea.parentNode.classList.contains('after')) {
         blueArea.style.right = '-200%';
+        blueArea.style.transform = 'skew(0)';
+        midArea.style.transform = 'skew(0)';
+        startPage()
+        if(contentPages[11].classList.contains('blue-clicked')){
+            contentPages[11].classList.remove('blue-clicked');
+            scoreBlue--;
+        }
+        contentPages[11].classList.add('red-clicked');
+        scoreRed++;
     }
 });
+const choiceTotal = document.querySelector("#choice-total");
+const choiceRed = document.querySelector('#choice-red');
+const choiceBlue = document.querySelector('#choice-blue');
+function updateScore() {
+    let scoreTotal = scoreRed + scoreBlue;
+    choiceTotal.innerHTML = scoreTotal;
+    choiceRed.innerHTML = scoreRed;
+    choiceBlue.innerHTML = scoreBlue;
+}
 
 // table 클릭 이벤트
 const tables = document.querySelectorAll('.table');
@@ -49,11 +81,27 @@ function updateAreas() {
     let data = Array.from(spans).map(span => span.textContent);
     console.log(data);
     blueArea.style.right = data[3] / data[0] * 100 - 150 + '%';
-    blueArea.style.transform = 'skew(-16deg)';
-    if (data[2] !== 0) {
+    if(data[3] == 0 || data[3] == data[0]){
+        blueArea.style.transform = 'skew(0)';
+    }
+    else {
+        blueArea.style.transform = 'skew(-16deg)';
+    }
+    if(data[2] == 0){
+        midArea.style.transform = 'skew(0)';
+        midArea.style.right = '-150%';
+    }
+    else if(data[2] == data[0]){
+        midArea.style.transform = 'skew(0)';
         midArea.style.right = (parseInt(data[2])+parseInt(data[3])) / data[0] * 100 - 150 + '%';
-    } else {
-        midArea.style.right = '-100%';
+    }
+    else{
+        midArea.style.transform = 'skew(-16deg)';
+        midArea.style.right = (parseInt(data[2])+parseInt(data[3])) / data[0] * 100 - 150 + '%';
+    }
+    if(data[0] == data[1]){
+        midArea.style.transform = 'skew(0)';
+        blueArea.style.transform = 'skew(0)';
     }
   }
   
@@ -76,7 +124,7 @@ function setSelectedIndex(index) {
   });
 
 
-//title 데이터
+//top title 데이터
 const ptitle = {
     red: ['　', 'Red', '　'],
     mid: ['발견', 'vs', '진실'],
@@ -84,12 +132,12 @@ const ptitle = {
 }
 const title = {
     first: ['축구', '축구', '야구', '야구', '농구', '대학 스포츠 대항전', '대학 스포츠 대항전', '리그 오브 레전드', '한국 정치 진영', '콜라', '한국 전자제품'],
-    red: ['FC 서울', '포항 스틸러스', 'KIA 타이거즈', '롯데 자이언츠', '서울 삼성 썬더스', '고려대학교', '포항공대', '레드 진영', '보수당', '코카콜라', 'LG전자'],
+    red: ['FC 서울', '포항 스틸러스', 'KIA 타이거즈', '롯데 자이언츠', '서울 삼성 썬더스', '고려대학교', '포항공대', '레드 진영', '보수당', '코카콜라', 'LG전자', 'Red'],
     mid: ['vs'],
-    blue: ['인천 유나이티드 FC', '울산 현대', '삼성 라이온즈', 'NC 다이노스', '창원 LG 세이커스', '연세대학교', '카이스트', '블루 진영', '민주당', '펩시', '삼성전자'],
+    blue: ['인천 유나이티드 FC', '울산 현대', '삼성 라이온즈', 'NC 다이노스', '창원 LG 세이커스', '연세대학교', '카이스트', '블루 진영', '민주당', '펩시', '삼성전자', 'Blue'],
     last: ['　', '　', '　', '　', '　']
 }
-const categoryBox = document.querySelector('#categories');
+const categoryBox = document.querySelector('#category-box');
 
 let categoryList = '';
 for(let i = 0; i<11; i++){
@@ -105,6 +153,7 @@ for(let i = 0; i<11; i++){
 categoryBox.innerHTML = categoryList;
 categoryBox.addEventListener('click', () => {
     categoryBox.classList.add('page-show');
+    addBottomClick();
 })
 
 const titleArea = document.querySelector('#title');
@@ -126,12 +175,8 @@ function updateTitle(index) {
 }
 
 //bottom 데이터
-const pbottom = ['스포츠에서 이기려면 빨간 유니폼을 입어라',
-'RED vs BLUE 당신의 선택',
-'그들의 연구는 통계학적으로 잘못되었다']
-const bottom = ['2023년 2월 기준 한국 축구 경인 더비 전적',
-'2023년 4월 22일 기준 한국 축구 동해안 더비 전적', 'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적', '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적', '2022-23시즌 기준 한국프로농구 전자 더비 전적',
-'대학교 스포츠 대항전 연고전-고연전', '대학교 스포츠 대항전 카포전-포카전 2002 - 2022', '리그 오브 레전드 월드 챔피언십', '대한민국의 정치 진영', '세기의 라이벌 2023년 1분기 재무 비교', '대한민국 대표 전자 기업 2023년 1분기 재무 비교']
+const pbottom = ['스포츠에서 이기려면 빨간 유니폼을 입어라', 'RED vs BLUE 당신의 선택', '그들의 연구는 통계학적으로 잘못되었다']
+const bottom = ['2023년 2월 기준 한국 축구 경인 더비 전적', '2023년 4월 22일 기준 한국 축구 동해안 더비 전적', 'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적', '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적', '2022-23시즌 기준 한국프로농구 전자 더비 전적', '대학교 스포츠 대항전 연고전-고연전', '대학교 스포츠 대항전 카포전-포카전 2002 - 2022', '리그 오브 레전드 월드 챔피언십', '대한민국의 정치 진영', '세기의 라이벌 2023년 1분기 재무 비교', '대한민국 대표 전자 기업 2023년 1분기 재무 비교', 'RED', 'BLUE']
 const bottomText = document.querySelectorAll('.bottom-txt');
 function updatePBottom(index) {
     for (i = 0; i < 4; i++) {
@@ -144,18 +189,16 @@ function updateBottom(index) {
     }
 }
 //page 이벤트
-const topPrev = document.querySelector('#top_prev');
-const topNext = document.querySelector('#top_next');
+const topPrev = document.querySelector('#top-prev');
+const topNext = document.querySelector('#top-next');
 
 
 let currentPageIndex = 0;
 
 function showPage(pageIndex) {
   pages.forEach((page, index) => {
-    if(!categoryBox.classList.contains('page-show')){
         updatePTitle(pageIndex);
         updatePBottom(pageIndex);
-    }
     if (index === pageIndex) {
         setTimeout(() => {
             page.style.display = 'block';
@@ -173,10 +216,26 @@ function showPage(pageIndex) {
     }
   });
 }
+
 const categories = document.querySelectorAll('.category');
 const contentPages = document.querySelectorAll('.content-page');
 
+//category 리스트의 마지막 페이지 이벤트
+function addBottomClick() {
+    console.log('bottomclickevent1');
+    if(currentPageIndex == 1 && !categoryBox.classList.contains('page-show')){
+        console.log('bottomclickevent2');
+        container.classList.add('bottom-click');
+    }
+    else {
+        console.log('bottomclickevent3');
+        container.classList.remove('bottom-click');
+    }
+}
+
+//top 화살표 버튼 클릭 이벤트
 topPrev.addEventListener('click', () => {
+    topNext.innerHTML = '→';
     if (categoryBox.classList.contains('page-show')) {
         showPage(currentPageIndex);
         categoryBox.classList.remove('page-show');
@@ -186,15 +245,29 @@ topPrev.addEventListener('click', () => {
         showPage(currentPageIndex);
     }
     else {
-        location.reload();
+        topArea.style.opacity = '0';
+            bottomArea.style.opacity = '0';
+            redArea.style.zIndex = '1';
+            midArea.style.zIndex = '0';
+            blueArea.style.zIndex = '2';
+            midArea.style.right = '-150%';
+        setTimeout(() => {   
+            blueArea.style.transform = 'skew(-16deg)';
+            container.classList.remove('after');
+        }, 200);
     }
+    addBottomClick();
 });
 
 topNext.addEventListener('click', () => {
+    if(currentPageIndex == 1){
+        topNext.innerHTML = '　';
+    }
     if (currentPageIndex < pages.length - 1) {
         currentPageIndex++;
         showPage(currentPageIndex);
     }
+    addBottomClick();
 });
 
 
@@ -202,6 +275,7 @@ function showContentPage(index) {
     //카테고리 숨기기
     setTimeout(() => {
         categoryBox.style.opacity = 0;
+        topNext.innerHTML = '　';
     }, 200);
     setTimeout(() => {
         categoryBox.style.display = 'none';
@@ -250,9 +324,22 @@ topPrev.addEventListener('click', () => {
         categoryBox.style.opacity = 1;
     }, 400);
 });
-
+bottomArea.addEventListener('click', () => {
+    updateScore();
+    updateTitle(11);
+    if(contentPages[11].classList.contains('red-clicked')){
+        updateBottom(11);
+    }
+    else {
+        updateBottom(12);
+    }
+    hideContentPages();
+    showContentPage(11);
+    categoryBox.classList.add('page-show');
+    addBottomClick();
+})
 //page 진입 이벤트
-container.addEventListener('click', () => {
+function startPage() {
     container.classList.add('after');
     redArea.style.zIndex = '-3';
     midArea.style.zIndex = '-2';
@@ -262,4 +349,4 @@ container.addEventListener('click', () => {
         bottomArea.style.opacity = '1';
     }, 200);
     showPage(currentPageIndex);
-})
+}

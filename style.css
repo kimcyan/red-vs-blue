@@ -13,7 +13,7 @@ body {
 }
 
 #red-area {
-  background-color: #E32537;
+  background-color: #F83E48;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -50,7 +50,7 @@ body {
   cursor: pointer;
 }
 #red-txt {
-  color: #E32537;
+  color: #F83E48;
 }
 #blue-txt {
   transform: skew(16deg);
@@ -121,7 +121,7 @@ body {
   display: none;
 }
 #top-nav, .category {
-  background-color: black;
+  background-color: #1B1B1B;
   font-size: calc(2.9vw - 10px);
   color: white;
   font-weight: 700;
@@ -130,6 +130,7 @@ body {
   align-items: center;
   transition: 0.5s;
   opacity: 0;
+  padding-inline: 20px;
 }
 #top-nav {
   padding-inline: 14px;
@@ -141,7 +142,6 @@ body {
 }
 .category div {
   width: 100%;
-  text-align: center;
   padding: 10px 12px;
 }
 .nav-content {
@@ -156,17 +156,21 @@ body {
   width: 60%;
   justify-content: space-evenly;
   align-items: center;
-  transition: 1s;
 }
 #title div, .category-teams div {
   width: 100%;
-  text-align: center;
+  padding-inline: 12px;
 }
 #Rtitle, .red-team {
-  color:#E32537;
+  color:#F83E48;
+  text-align: right;
 }
 #Btitle, .blue-team {
   color:#1DC1DD;
+}
+#Mtitle, #mid-text {
+  text-align: center;
+  max-width: calc((2.9vw - 10px)*3);
 }
 .arrow {
   color: gray;
@@ -193,15 +197,17 @@ body {
   display: none;
 }
 .text-box a, .mark {
-  background-color: black;
+  background-color: #1B1B1B;
   color: white;
   padding-inline:2px;
   text-decoration: none;
   cursor: pointer;
+  mix-blend-mode: multiply;
 }
 .text-box a:hover, .mark:hover {
-  background-color: white;
-  color: black;
+  background-color: #ABABAB;
+  color: #1B1B1B;
+  mix-blend-mode: luminosity;
 }
 .text-copyright {
   text-align: right;
@@ -209,7 +215,7 @@ body {
 .table {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #1B1B1B;
   cursor: pointer;
 }
 .table:hover{
@@ -230,13 +236,13 @@ body {
   position: absolute;
   bottom: 0;
   background-color: white;
-  color: black;
+  color: #1B1B1B;
   font-size: calc(2.9vw + 10px);
   font-weight: 700;
   width: 100%;
   padding: 4px 12px;
   text-align: center;
-  border-top: 1px solid black;
+  border-top: 1px solid #1B1B1B;
   opacity: 0;
 }
 .bottom-line {
@@ -261,7 +267,7 @@ body {
   cursor: pointer;
 }
 .bottom-click #bottom:hover {
-  background-color: black;
+  background-color: #1B1B1B;
   color: white;
   transition: 0.2s;
 }
@@ -280,11 +286,14 @@ body {
 }
 .category:hover {
   background-color: white;
-  color: black;
+  color: #1B1B1B;
 }
 
 @media screen and (max-width: 980px){
   #top-nav, .category {
     font-size: 18px;
+  }
+  #Mtitle, #mid-text {
+    max-width: 32px;
   }
 }

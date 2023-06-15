@@ -356,7 +356,7 @@ function startPage() {
 }
 
 VanillaTilt.init(categories, {
-    max: 50,
+    max: 75,
     speed: 200,
     axis: "y",
     reverse: true

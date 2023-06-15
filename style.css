@@ -202,7 +202,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   max-width: calc((2.9vw - 10px) * 3);
 }
 .info {
-  font-size: calc(2.9vw - 18px);
+  font-size: calc(2.9vw - 20px);
 }
 .arrow {
   color: gray;
@@ -221,7 +221,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding: 0 36px;
   line-height: 1.7;
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: calc(100% - 2.9vw - 20px);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -243,6 +243,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   color: #1b1b1b;
   mix-blend-mode: luminosity;
 }
+.text-info {
+  font-size: 16px;
+  text-align: right;
+}
+.text-info > span {
+  display:block;
+}
 .text-copyright {
   text-align: right;
 }
@@ -251,9 +258,11 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   align-items: center;
   border-bottom: 1px solid #1b1b1b;
   cursor: pointer;
+  color: #1b1b1baa
 }
 .table:hover {
   background-color: white;
+  color: #1b1b1b;
 }
 .table div {
   width: 100%;
@@ -262,8 +271,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   font-weight: 600;
   padding: 6px 0;
 }
+.total {
+  color: #1b1b1b;
+  border-bottom: 2px solid #1b1b1b;
+}
 .selected {
   background-color: white;
+  color: #1b1b1b;
 }
 
 #bottom {
@@ -329,7 +343,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     max-width: 32px;
   }
 }
-@media screen and (max-width: 1173px) {
+@media screen and (max-width: 1242px) {
   .info {
     font-size: 16px;
   }

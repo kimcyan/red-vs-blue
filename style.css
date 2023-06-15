@@ -13,14 +13,14 @@ body {
 }
 
 #red-area {
-  background-color: #F83E48;
+  background-color: #f83e48;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: 1;
 }
 #mid-area {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 150%;
   height: 100%;
   position: absolute;
@@ -30,7 +30,7 @@ body {
   transition: 0.5s;
 }
 #blue-area {
-  background-color: #1DC1DD;
+  background-color: #1dc1dd;
   width: 150%;
   height: 100%;
   position: absolute;
@@ -50,11 +50,11 @@ body {
   cursor: pointer;
 }
 #red-txt {
-  color: #F83E48;
+  color: #f83e48;
 }
 #blue-txt {
   transform: skew(16deg);
-  color: #1DC1DD;
+  color: #1dc1dd;
 }
 .txtline {
   width: 100%;
@@ -64,7 +64,7 @@ body {
 .txtline div {
   padding-inline: 10px;
 }
-#red-txt .txtline div{
+#red-txt .txtline div {
   animation: loopText1 60s linear infinite;
   animation-delay: -60s;
 }
@@ -73,22 +73,22 @@ body {
   animation-delay: -30s;
 }
 @keyframes loopText1 {
-0%{
-  transform: translateX(-100%);
-}
-100%{
-  transform: translateX(100%);
-}
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 @keyframes loopText2 {
-  0%{
+  0% {
     transform: translateX(-200%);
   }
-  100%{
+  100% {
     transform: translateX(0%);
   }
 }
-#blue-txt .txtline div{
+#blue-txt .txtline div {
   animation: loopText3 60s linear infinite;
   animation-delay: -60s;
 }
@@ -98,18 +98,18 @@ body {
   transform: translateX(-200%);
 }
 @keyframes loopText3 {
-0%{
-  transform: translateX(100%);
-}
-100%{
-  transform: translateX(-100%);
-}
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 @keyframes loopText4 {
-  0%{
+  0% {
     transform: translateX(0%);
   }
-  100%{
+  100% {
     transform: translateX(-200%);
   }
 }
@@ -120,8 +120,9 @@ body {
 .after .maintxt {
   display: none;
 }
-#top-nav, .category {
-  background-color: #1B1B1B;
+#top-nav,
+.category {
+  background-color: #1b1b1b;
   font-size: calc(2.9vw - 10px);
   color: white;
   font-weight: 700;
@@ -139,7 +140,31 @@ body {
   opacity: 1;
   margin-block: 1px;
   cursor: pointer;
+  text-shadow:rgba( 27, 27, 27, 0.8 ) 0 0 3px;
+  background: rgba( 27, 27, 27, 0.7 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+.category:hover {
+  background: rgba( 255, 255, 255, 0.5 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: #1b1b1b;
+  text-shadow:rgba( 255, 255, 255, 0.5 ) 0 0 3px;
+  > .red-team {
+    color:#D52D45;
+  }
+  > .blue-team {
+    color: #0E739F;
+  }
+}
+
 .category div {
   width: 100%;
   padding: 10px 12px;
@@ -151,34 +176,41 @@ body {
   cursor: pointer;
 }
 
-#title{
+#title {
   display: flex;
   width: 60%;
   justify-content: space-evenly;
   align-items: center;
 }
-#title div, .category-teams div {
+#title div,
+.category-teams div {
   width: 100%;
   padding-inline: 12px;
 }
-#Rtitle, .red-team {
-  color:#F83E48;
+#Rtitle,
+.red-team {
+  color: #f83e48;
   text-align: right;
 }
-#Btitle, .blue-team {
-  color:#1DC1DD;
+#Btitle,
+.blue-team {
+  color: #1dc1dd;
 }
-#Mtitle, #mid-text {
+#Mtitle,
+#mid-text {
   text-align: center;
-  max-width: calc((2.9vw - 10px)*3);
+  max-width: calc((2.9vw - 10px) * 3);
+}
+.info {
+  font-size: calc(2.9vw - 18px);
 }
 .arrow {
   color: gray;
-  transition: 0.2s
+  transition: 0.2s;
 }
 .arrow:hover {
   color: white;
-  transition: 0.2s
+  transition: 0.2s;
 }
 
 .text-box {
@@ -196,17 +228,19 @@ body {
 .text-box::-webkit-scrollbar {
   display: none;
 }
-.text-box a, .mark {
-  background-color: #1B1B1B;
+.text-box a,
+.mark {
+  background-color: #1b1b1b;
   color: white;
-  padding-inline:2px;
+  padding-inline: 2px;
   text-decoration: none;
   cursor: pointer;
   mix-blend-mode: multiply;
 }
-.text-box a:hover, .mark:hover {
-  background-color: #ABABAB;
-  color: #1B1B1B;
+.text-box a:hover,
+.mark:hover {
+  background-color: #ababab;
+  color: #1b1b1b;
   mix-blend-mode: luminosity;
 }
 .text-copyright {
@@ -215,10 +249,10 @@ body {
 .table {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #1B1B1B;
+  border-bottom: 1px solid #1b1b1b;
   cursor: pointer;
 }
-.table:hover{
+.table:hover {
   background-color: white;
 }
 .table div {
@@ -229,20 +263,20 @@ body {
   padding: 6px 0;
 }
 .selected {
-  background-color:white;
+  background-color: white;
 }
 
 #bottom {
   position: absolute;
   bottom: 0;
   background-color: white;
-  color: #1B1B1B;
+  color: #1b1b1b;
   font-size: calc(2.9vw + 10px);
   font-weight: 700;
   width: 100%;
   padding: 4px 12px;
   text-align: center;
-  border-top: 1px solid #1B1B1B;
+  border-top: 1px solid #1b1b1b;
   opacity: 0;
 }
 .bottom-line {
@@ -267,7 +301,7 @@ body {
   cursor: pointer;
 }
 .bottom-click #bottom:hover {
-  background-color: #1B1B1B;
+  background-color: #1b1b1b;
   color: white;
   transition: 0.2s;
 }
@@ -284,16 +318,19 @@ body {
   display: none;
   transition: 0.2s;
 }
-.category:hover {
-  background-color: white;
-  color: #1B1B1B;
-}
 
-@media screen and (max-width: 980px){
-  #top-nav, .category {
+@media screen and (max-width: 980px) {
+  #top-nav,
+  .category {
     font-size: 18px;
   }
-  #Mtitle, #mid-text {
+  #Mtitle,
+  #mid-text {
     max-width: 32px;
+  }
+}
+@media screen and (max-width: 1173px) {
+  .info {
+    font-size: 16px;
   }
 }

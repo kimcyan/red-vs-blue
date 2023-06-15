@@ -176,7 +176,7 @@ function updateTitle(index) {
 
 //bottom 데이터
 const pbottom = ['스포츠에서 이기려면 빨간 유니폼을 입어라', 'RED vs BLUE 당신의 선택', '그들의 연구는 통계학적으로 잘못되었다']
-const bottom = ['2023년 2월 기준 한국 축구 경인 더비 전적', '2023년 4월 22일 기준 한국 축구 동해안 더비 전적', 'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적', '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적', '2022-23시즌 기준 한국프로농구 전자 더비 전적', '대학교 스포츠 대항전 연고전-고연전', '대학교 스포츠 대항전 카포전-포카전 2002 - 2022', '리그 오브 레전드 월드 챔피언십', '대한민국의 정치 진영', '세기의 라이벌 2023년 1분기 재무 비교', '대한민국 대표 전자 기업 2023년 1분기 재무 비교', '당신의 선택 ~ RED ~', '당신의 선택 ~ BLUE ~']
+const bottom = ['2023년 2월 기준 한국 축구 경인 더비 전적', '2023년 4월 22일 기준 한국 축구 동해안 더비 전적', 'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적', '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적', '2022-23시즌 기준 한국프로농구 전자 더비 전적', '대학교 스포츠 대항전 연고전-고연전', '대학교 스포츠 대항전 카포전-포카전 2002 - 2022', '리그 오브 레전드 월드 챔피언십', '대한민국의 정치 진영', '세기의 라이벌 2023년 1분기 재무 비교', '대한민국 대표 전자 기업 2023년 1분기 재무 비교', '당신의 선택 --- RED ---', '당신의 선택 --- BLUE ---']
 const bottomText = document.querySelectorAll('.bottom-txt');
 function updatePBottom(index) {
     for (i = 0; i < 4; i++) {
@@ -223,7 +223,8 @@ const contentPages = document.querySelectorAll('.content-page');
 //category 리스트의 마지막 페이지 이벤트
 function addBottomClick() {
     console.log('bottomclickevent1');
-    if(currentPageIndex == 1 && !categoryBox.classList.contains('page-show')){
+    console.log(currentPageIndex);
+    if(currentPageIndex === 1 && !categoryBox.classList.contains('page-show')){
         console.log('bottomclickevent2');
         container.classList.add('bottom-click');
     }
@@ -250,6 +251,7 @@ topPrev.addEventListener('click', () => {
             redArea.style.zIndex = '1';
             midArea.style.zIndex = '0';
             blueArea.style.zIndex = '2';
+            blueArea.style.right = '-100%';
             midArea.style.right = '-150%';
         setTimeout(() => {   
             blueArea.style.transform = 'skew(-16deg)';
@@ -325,6 +327,7 @@ topPrev.addEventListener('click', () => {
     }, 400);
 });
 bottomArea.addEventListener('click', () => {
+    if(container.classList.contains('bottom-click')){
     updateScore();
     updateTitle(11);
     if(contentPages[11].classList.contains('red-clicked')){
@@ -337,6 +340,7 @@ bottomArea.addEventListener('click', () => {
     showContentPage(11);
     categoryBox.classList.add('page-show');
     addBottomClick();
+}
 })
 //page 진입 이벤트
 function startPage() {
@@ -350,3 +354,10 @@ function startPage() {
     }, 200);
     showPage(currentPageIndex);
 }
+
+VanillaTilt.init(categories, {
+    max: 50,
+    speed: 200,
+    axis: "y",
+    reverse: true
+});

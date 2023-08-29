@@ -135,9 +135,12 @@ const title = {
     '야구',
     '야구',
     '농구',
+    '농구',
+    '배구',
     '대학 스포츠 대항전',
     '대학 스포츠 대항전',
     '리그 오브 레전드',
+    '카트라이더',
     '한국 정치 진영',
     '콜라',
     '한국 전자제품',
@@ -148,9 +151,12 @@ const title = {
     'KIA 타이거즈',
     '롯데 자이언츠',
     '서울 삼성 썬더스',
+    '울산 현대모비스 피버스',
+    'KGC인삼공사',
     '고려대학교',
     '포항공대',
     '레드 진영',
+    '레드',
     '보수당',
     '코카콜라',
     'LG전자',
@@ -163,9 +169,12 @@ const title = {
     '삼성 라이온즈',
     'NC 다이노스',
     '창원 LG 세이커스',
+    '전주 KCC 이지스',
+    '한국도로공사',
     '연세대학교',
     '카이스트',
     '블루 진영',
+    '블루',
     '민주당',
     '펩시',
     '삼성전자',
@@ -176,7 +185,7 @@ const title = {
 const categoryBox = document.querySelector('#category-box');
 
 let categoryList = '';
-for (let i = 0; i < 11; i++) {
+for (let i = 0; i < 14; i++) {
   categoryList += `
     <div class="category">
     <div class="category-container">
@@ -219,14 +228,17 @@ const pbottom = [
   '그들의 연구는 통계학적으로 잘못되었다',
 ];
 const bottom = [
-  '2023년 2월 기준 한국 축구 경인 더비 전적',
-  '2023년 4월 22일 기준 한국 축구 동해안 더비 전적',
+  '2023년 2월 기준 K리그 경인 더비 전적',
+  '2023년 4월 22일 기준 K리그 동해안 더비 전적',
   'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적',
   '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적',
   '2022-23시즌 기준 한국프로농구 전자 더비 전적',
+  '2022-23시즌 기준 한국프로농구 현대가 더비 전적',
+  '2022-23시즌 기준 V-리그 공사더비 전적',
   '대학교 스포츠 대항전 연고전-고연전',
   '대학교 스포츠 대항전 카포전-포카전 2002 - 2022',
   '리그 오브 레전드 월드 챔피언십',
+  '카트라이더 리그',
   '대한민국의 정치 진영',
   '세기의 라이벌 2023년 1분기 재무 비교',
   '대한민국 대표 전자 기업 2023년 1분기 재무 비교',
@@ -378,14 +390,14 @@ topPrev.addEventListener('click', () => {
 bottomArea.addEventListener('click', () => {
   if (container.classList.contains('bottom-click')) {
     updateScore();
-    updateTitle(11);
-    if (contentPages[11].classList.contains('red-clicked')) {
-      updateBottom(11);
+    updateTitle(14);
+    if (contentPages[14].classList.contains('red-clicked')) {
+      updateBottom(14);
     } else {
-      updateBottom(12);
+      updateBottom(15);
     }
     hideContentPages();
-    showContentPage(11);
+    showContentPage(14);
     categoryBox.classList.add('page-show');
     addBottomClick();
   }

@@ -173,10 +173,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #1b1b1b;
   text-shadow: rgba(255, 255, 255, 0.5) 0 0 3px;
-  > .red-team {
+  & .red-team {
     color: #d52d45;
   }
-  > .blue-team {
+  & .blue-team {
     color: #0e739f;
   }
 }

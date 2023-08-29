@@ -120,48 +120,64 @@ body {
 .after .maintxt {
   display: none;
 }
-#top-nav,
 .category {
   background-color: #1b1b1b;
   font-size: calc(2.9vw - 10px);
   color: white;
   font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   transition: 0.5s;
   opacity: 0;
   padding-inline: 20px;
 }
+.category-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: auto;
+}
 #top-nav {
+  background-color: #1b1b1b;
+  font-size: calc(2.9vw - 10px);
+  color: white;
+  font-weight: 700;
+  transition: 0.5s;
+  opacity: 0;
   padding-inline: 14px;
+}
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1920px;
+  margin: auto;
 }
 .category {
   opacity: 1;
   margin-block: 1px;
   cursor: pointer;
-  text-shadow:rgba( 27, 27, 27, 0.8 ) 0 0 3px;
-  background: rgba( 27, 27, 27, 0.7 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  text-shadow: rgba(27, 27, 27, 0.8) 0 0 3px;
+  background: rgba(27, 27, 27, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 .category:hover {
-  background: rgba( 255, 255, 255, 0.5 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #1b1b1b;
-  text-shadow:rgba( 255, 255, 255, 0.5 ) 0 0 3px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 0 3px;
   > .red-team {
-    color:#D52D45;
+    color: #d52d45;
   }
   > .blue-team {
-    color: #0E739F;
+    color: #0e739f;
   }
 }
 
@@ -248,21 +264,25 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   text-align: right;
 }
 .text-info > span {
-  display:block;
+  display: block;
 }
 .text-copyright {
   text-align: right;
 }
 .table {
-  display: flex;
-  align-items: center;
   border-bottom: 1px solid #1b1b1b;
   cursor: pointer;
-  color: #1b1b1baa
+  color: #1b1b1baa;
 }
 .table:hover {
   background-color: white;
   color: #1b1b1b;
+}
+.table-container {
+  display: flex;
+  align-items: center;
+  max-width: 1920px;
+  margin: auto;
 }
 .table div {
   width: 100%;

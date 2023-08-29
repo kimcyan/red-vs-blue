@@ -1,709 +1,1266 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no;">
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
     <title>Red vs Blue</title>
-    <link type="text/css" rel="stylesheet" href="./style.css">
-</head>
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <div id="container">
-        <div id="red-area">
-            <div class="maintxt" id="red-txt">
-                <div class="txtline line1">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line2">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line3">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line4">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line5">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line6">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
-                <div class="txtline line7">
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                    <div>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                        <span>RED</span>
-                    </div>
-                </div>
+      <div id="red-area">
+        <div class="maintxt" id="red-txt">
+          <div class="txtline line1">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
             </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line2">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line3">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line4">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line5">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line6">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
+          <div class="txtline line7">
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+            <div>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+              <span>RED</span>
+            </div>
+          </div>
         </div>
-        <div id="mid-area"></div>
-        <div id="blue-area">
-            <div class="maintxt" id="blue-txt">
-                <div class="txtline line1">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line2">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line3">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line4">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line5">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line6">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
-                <div class="txtline line7">
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                    <div>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                        <span>BLUE</span>
-                    </div>
-                </div>
+      </div>
+      <div id="mid-area"></div>
+      <div id="blue-area">
+        <div class="maintxt" id="blue-txt">
+          <div class="txtline line1">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
             </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line2">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line3">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line4">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line5">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line6">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
+          <div class="txtline line7">
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+            <div>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+              <span>BLUE</span>
+            </div>
+          </div>
         </div>
-        <div id="top-nav">
-            <div id="top-prev" class="btn nav-content arrow">←</div>
-            <div id="title" class="btn nav-content">
-                <div id="Rtitle">　</div>
-                <div id="Mtitle">발견</div>
-                <div id="Btitle">　</div>
-            </div>
-            <div id="top-next" class="btn nav-content arrow">→</div>
+      </div>
+      <div id="top-nav">
+        <div class="top-container">
+          <div id="top-prev" class="btn nav-content arrow">←</div>
+          <div id="title" class="btn nav-content">
+            <div id="Rtitle">　</div>
+            <div id="Mtitle">발견</div>
+            <div id="Btitle">　</div>
+          </div>
+          <div id="top-next" class="btn nav-content arrow">→</div>
         </div>
-        <div class="page">
-            <div class="text-box">
-                <p class="text-info">
-                    <span>글쓴이 <span class="mark">Scieng office</span></span>
-                    <span>등록일 <span class="mark">2005-05-19 16:04</span></span>
-                </p>
-                <p>영국의 과학자들은 최근 <a class="text-link" href="https://www.nature.com/articles/435293a"
-                        target="_blank">네이처지</a>를 통해
-                    빨간색이 스포츠 경기에서 승률을 높인다고 밝혔다.</p>
-                <p>Durham 대학의 연구팀은 스포츠경기 같은 육체적인 경쟁에서 <span class="mark">빨간색의 유니폼이나 장비 등을 착용하면 승률이 더 높다</span>는 것을 알아냈다.
-                    Barton
-                    박사는 아직 정확한 원인은
-                    모르지만 “빨간색은 상대방의 테스토스테론 분비를 억압하거나 혹은 자신의 테스토스테론 분비를 활성화한다”고 말했다.</p>
-                <p>Barton과 Russell Hill 은 2004 아테네 올림픽에 열렸던 4개의 격투경기(권투, 태권도, 그레코로만 레슬링, 레슬링자유형)에 대해 분석했다. 그 결과, 4종
-                    경기 모두 <span class="mark">빨간 유니폼이나 장비를 착용한 선수가 훨씬 더 많이 이겼다</span>는 사실을 알아냈다. 단, 기량이 비슷한 양 선수가 비교적 대등한
-                    경기를 펼쳤을 때에만 ‘붉은색의
-                    효과’가 나타났다.</p>
-                <p>연구팀에 의하면 이처럼 경쟁구도에서 색깔이 미치는 영향은 진화 과정에서 그 뿌리를 찾을 수 있을거라고. 이들에 따르면 동물의 세계에서 빨간색은 체력, 공격성, 테스토스테론의
-                    분비량 등과 관계가 있을지도 모른다고 한다.</p>
-                <p>가령 수컷 비비의 경우 얼굴, 둔부, 생식기에 붉은색을 띠는 부분이 있는데, 이는 다른 수컷들과 싸울 때 전투력을 나타내는 커뮤니케이션 수단으로 이용되기도 한다.</p>
-                <p>Barton 박사는 “동물세계에서 빨간색은 자신의 상태를 자질을 보여주는 데에 아주 솔직한 신호로 쓰인다”며 근육이나 얼굴에서 보이는 혈류량은 포커페이스의 최대 적이라고
-                    말했다.</p>
-                <p>Barton 박사는 과거 50년 동안 영국 축구를 이끈 3팀은 리버풀, 맨체스터 유나이티드, 아스날로 이들 모두 빨간 유니폼을 착용했다며 “<span class="mark">첼시
-                        서포터인 자신이 빨간색의 효능을 미리 알았다면 작년의 우승팀은 첼시가 됐을지도 모른다</span>”며 아쉬움을 나타냈다.</p>
-                <p class="text-copyright"><a href="http://www.scieng.net/column/6496?page=9">출처</a>
-                </p>
-            </div>
+      </div>
+      <div class="page">
+        <div class="text-box">
+          <p class="text-info">
+            <span>
+              글쓴이
+              <span class="mark">Scieng office</span>
+            </span>
+            <span>
+              등록일
+              <span class="mark">2005-05-19 16:04</span>
+            </span>
+          </p>
+          <p>
+            영국의 과학자들은 최근
+            <a
+              class="text-link"
+              href="https://www.nature.com/articles/435293a"
+              target="_blank">
+              네이처지
+            </a>
+            를 통해 빨간색이 스포츠 경기에서 승률을 높인다고 밝혔다.
+          </p>
+          <p>
+            Durham 대학의 연구팀은 스포츠경기 같은 육체적인 경쟁에서
+            <span class="mark">
+              빨간색의 유니폼이나 장비 등을 착용하면 승률이 더 높다
+            </span>
+            는 것을 알아냈다. Barton 박사는 아직 정확한 원인은 모르지만
+            “빨간색은 상대방의 테스토스테론 분비를 억압하거나 혹은 자신의
+            테스토스테론 분비를 활성화한다”고 말했다.
+          </p>
+          <p>
+            Barton과 Russell Hill 은 2004 아테네 올림픽에 열렸던 4개의
+            격투경기(권투, 태권도, 그레코로만 레슬링, 레슬링자유형)에 대해
+            분석했다. 그 결과, 4종 경기 모두
+            <span class="mark">
+              빨간 유니폼이나 장비를 착용한 선수가 훨씬 더 많이 이겼다
+            </span>
+            는 사실을 알아냈다. 단, 기량이 비슷한 양 선수가 비교적 대등한 경기를
+            펼쳤을 때에만 ‘붉은색의 효과’가 나타났다.
+          </p>
+          <p>
+            연구팀에 의하면 이처럼 경쟁구도에서 색깔이 미치는 영향은 진화
+            과정에서 그 뿌리를 찾을 수 있을거라고. 이들에 따르면 동물의 세계에서
+            빨간색은 체력, 공격성, 테스토스테론의 분비량 등과 관계가 있을지도
+            모른다고 한다.
+          </p>
+          <p>
+            가령 수컷 비비의 경우 얼굴, 둔부, 생식기에 붉은색을 띠는 부분이
+            있는데, 이는 다른 수컷들과 싸울 때 전투력을 나타내는 커뮤니케이션
+            수단으로 이용되기도 한다.
+          </p>
+          <p>
+            Barton 박사는 “동물세계에서 빨간색은 자신의 상태를 자질을 보여주는
+            데에 아주 솔직한 신호로 쓰인다”며 근육이나 얼굴에서 보이는 혈류량은
+            포커페이스의 최대 적이라고 말했다.
+          </p>
+          <p>
+            Barton 박사는 과거 50년 동안 영국 축구를 이끈 3팀은 리버풀, 맨체스터
+            유나이티드, 아스날로 이들 모두 빨간 유니폼을 착용했다며 “
+            <span class="mark">
+              첼시 서포터인 자신이 빨간색의 효능을 미리 알았다면 작년의 우승팀은
+              첼시가 됐을지도 모른다
+            </span>
+            ”며 아쉬움을 나타냈다.
+          </p>
+          <p class="text-copyright">
+            <a href="http://www.scieng.net/column/6496?page=9">출처</a>
+          </p>
         </div>
-        <div class="page">
-            <div id="category-box"></div>
+      </div>
+      <div class="page">
+        <div id="category-box"></div>
+      </div>
+      <div class="content-page">
+        <div class="table total selected">
+          <div class="table-container">
+            <div>
+              <span>63</span>
+              전
+            </div>
+            <div>
+              <span>26</span>
+              승
+            </div>
+            <div>
+              <span>20</span>
+              무
+            </div>
+            <div>
+              <span>17</span>
+              승
+            </div>
+            <div><span>종합</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total selected">
-                <div><span>63</span>전</div>
-                <div><span>26</span>승</div>
-                <div><span>20</span>무</div>
-                <div><span>17</span>승</div>
-                <div><span>종합</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>52</span>
+              전
             </div>
-            <div class="table">
-                <div><span>52</span>전</div>
-                <div><span>22</span>승</div>
-                <div><span>16</span>무</div>
-                <div><span>14</span>승</div>
-                <div><span>K리그1</span></div>
+            <div>
+              <span>22</span>
+              승
             </div>
-            <div class="table">
-                <div><span>8</span>전</div>
-                <div><span>2</span>승</div>
-                <div><span>4</span>무</div>
-                <div><span>2</span>승</div>
-                <div><span>리그컵</span></div>
+            <div>
+              <span>16</span>
+              무
             </div>
-            <div class="table">
-                <div><span>3</span>전</div>
-                <div><span>2</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>1</span>승</div>
-                <div><span>FA컵</span></div>
+            <div>
+              <span>14</span>
+              승
             </div>
+            <div><span>K리그1</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>180</span>전</div>
-                <div><span>66</span>승</div>
-                <div><span>55</span>무</div>
-                <div><span>59</span>승</div>
-                <div><span>종합</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>8</span>
+              전
             </div>
-            <div class="table">
-                <div><span>154</span>전</div>
-                <div><span>59</span>승</div>
-                <div><span>47</span>무</div>
-                <div><span>48</span>승</div>
-                <div><span>K리그1</span></div>
+            <div>
+              <span>2</span>
+              승
             </div>
-            <div class="table">
-                <div><span>21</span>전</div>
-                <div><span>5</span>승</div>
-                <div><span>6</span>무</div>
-                <div><span>10</span>승</div>
-                <div><span>리그컵</span></div>
+            <div>
+              <span>4</span>
+              무
             </div>
-            <div class="table">
-                <div><span>4</span>전</div>
-                <div><span>2</span>승</div>
-                <div><span>1</span>무</div>
-                <div><span>1</span>승</div>
-                <div><span>FA컵</span></div>
+            <div>
+              <span>2</span>
+              승
             </div>
-            <div class="table">
-                <div><span>1</span>전</div>
-                <div><span>0</span>승</div>
-                <div><span>1</span>무</div>
-                <div><span>0</span>승</div>
-                <div><span>FA컵</span></div>
-            </div>
+            <div><span>리그컵</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>737</span>전</div>
-                <div><span>341</span>승</div>
-                <div><span>12</span>무</div>
-                <div><span>384</span>승</div>
-                <div><span>종합</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>3</span>
+              전
             </div>
+            <div>
+              <span>2</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>1</span>
+              승
+            </div>
+            <div><span>FA컵</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>160</span>전</div>
-                <div><span>65</span>승</div>
-                <div><span>4</span>무</div>
-                <div><span>91</span>승</div>
-                <div><span>종합</span></div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>180</span>
+              전
             </div>
-
+            <div>
+              <span>66</span>
+              승
+            </div>
+            <div>
+              <span>55</span>
+              무
+            </div>
+            <div>
+              <span>59</span>
+              승
+            </div>
+            <div><span>종합</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>150</span>전</div>
-                <div><span>84</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>66</span>승</div>
-                <div><span>종합</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>154</span>
+              전
             </div>
+            <div>
+              <span>59</span>
+              승
+            </div>
+            <div>
+              <span>47</span>
+              무
+            </div>
+            <div>
+              <span>48</span>
+              승
+            </div>
+            <div><span>K리그1</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>50</span>전</div>
-                <div><span>19</span>승</div>
-                <div><span>10</span>무</div>
-                <div><span>21</span>승</div>
-                <div><span>우승</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>21</span>
+              전
             </div>
-            <div class="table">
-                <div><span>49</span>전</div>
-                <div><span>25</span>승</div>
-                <div><span>6</span>무</div>
-                <div><span>18</span>승</div>
-                <div><span>야구</span></div>
+            <div>
+              <span>5</span>
+              승
             </div>
-            <div class="table">
-                <div><span>50</span>전</div>
-                <div><span>23</span>승</div>
-                <div><span>5</span>무</div>
-                <div><span>22</span>승</div>
-                <div><span>농구</span></div>
+            <div>
+              <span>6</span>
+              무
             </div>
-            <div class="table">
-                <div><span>49</span>전</div>
-                <div><span>20</span>승</div>
-                <div><span>12</span>무</div>
-                <div><span>17</span>승</div>
-                <div><span>축구</span></div>
+            <div>
+              <span>10</span>
+              승
             </div>
-            <div class="table">
-                <div><span>49</span>전</div>
-                <div><span>17</span>승</div>
-                <div><span>9</span>무</div>
-                <div><span>23</span>승</div>
-                <div><span>아이스하키</span></div>
-            </div>
-            <div class="table">
-                <div><span>48</span>전</div>
-                <div><span>20</span>승</div>
-                <div><span>3</span>무</div>
-                <div><span>25</span>승</div>
-                <div><span>럭비</span></div>
-            </div>
-            <div class="table">
-                <div><span>245</span>전</div>
-                <div><span>105</span>승</div>
-                <div><span>35</span>무</div>
-                <div><span>105</span>승</div>
-                <div><span>종합</span></div>
-            </div>
+            <div><span>리그컵</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>18</span>전</div>
-                <div><span>8</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>10</span>승</div>
-                <div><span>우승</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>4</span>
+              전
             </div>
-            <div class="table">
-                <div><span>8</span>전</div>
-                <div><span>5</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>3</span>승</div>
-                <div><span>스타크래프트</span></div>
+            <div>
+              <span>2</span>
+              승
             </div>
-            <div class="table">
-                <div><span>19</span>전</div>
-                <div><span>6</span>승</div>
-                <div><span>1</span>무</div>
-                <div><span>12</span>승</div>
-                <div><span>해킹</span></div>
+            <div>
+              <span>1</span>
+              무
             </div>
-            <div class="table">
-                <div><span>21</span>전</div>
-                <div><span>12</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>9</span>승</div>
-                <div><span>과학퀴즈</span></div>
+            <div>
+              <span>1</span>
+              승
             </div>
-            <div class="table">
-                <div><span>17</span>전</div>
-                <div><span>8</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>9</span>승</div>
-                <div><span>인공지능</span></div>
-            </div>
-            <div class="table">
-                <div><span>11</span>전</div>
-                <div><span>5</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>6</span>승</div>
-                <div><span>LOL</span></div>
-            </div>
+            <div><span>FA컵</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span>78</span>전</div>
-                <div><span>38</span>승</div>
-                <div><span>0</span>무</div>
-                <div><span>40</span>승</div>
-                <div><span>2022</span></div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>1</span>
+              전
             </div>
+            <div>
+              <span>0</span>
+              승
+            </div>
+            <div>
+              <span>1</span>
+              무
+            </div>
+            <div>
+              <span>0</span>
+              승
+            </div>
+            <div><span>FA컵</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table">
-                <div>총<span>26430</span>일</div>
-                <div><span>19776</span>일</div>
-                <div><span>588</span>일 무</div>
-                <div><span>6066</span>일</div>
-                <div><span>~19대 재직일</span></div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>737</span>
+              전
             </div>
-            <div class="table">
-                <div>총<span>20</span>회</div>
-                <div><span>15</span>회</div>
-                <div><span>1</span>회 무</div>
-                <div><span>4</span>회</div>
-                <div><span>취임 횟수</span></div>
+            <div>
+              <span>341</span>
+              승
             </div>
-            <div class="table">
-                <div style="font-size: 2.9vw;">총<span>32542553</span>표</div>
-                <div style="font-size: 2.9vw;"><span>16394815</span>표</div>
-                <div style="font-size: 2.9vw;"><span>1525300</span>표</div>
-                <div style="font-size: 2.9vw;"><span>16147738</span>표</div>
-                <div style="font-size: 2.9vw;"><span>20대 선거 유력 후보 특표수</span></div>
+            <div>
+              <span>12</span>
+              무
             </div>
+            <div>
+              <span>384</span>
+              승
+            </div>
+            <div><span>종합</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span style="display:none;">288.26</span></div>
-                <div><span>109.8</span>억</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>178.46</span>억</div>
-                <div><span>수익</span></div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>160</span>
+              전
             </div>
-            <div class="table">
-                <div><span style="display:none;">50.39</span></div>
-                <div><span>31.07</span>억</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>19.32</span>억</div>
-                <div><span>순이익</span></div>
+            <div>
+              <span>65</span>
+              승
             </div>
-            <div class="table">
-                <div><span style="display:none;">2.12</span></div>
-                <div><span>0.72</span></div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>1.4</span></div>
-                <div><span>희석주당이익</span></div>
+            <div>
+              <span>4</span>
+              무
             </div>
-            <div class="table">
-                <div><span style="display:none;">39.13</span></div>
-                <div><span>28.3</span>%</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>10.83</span>%</div>
-                <div><span>순이익률</span></div>
+            <div>
+              <span>91</span>
+              승
             </div>
-            <div class="table">
-                <div><span style="display:none;">62.81</span></div>
-                <div><span>34.87</span>억</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>27.94</span>억</div>
-                <div><span>영업이익</span></div>
-            </div>
+            <div><span>종합</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div><span style="display:none;">84.17</span></div>
-                <div><span>20.42</span>조</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>63.75</span>조</div>
-                <div><span>수익</span></div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>150</span>
+              전
             </div>
-            <div class="table">
-                <div><span style="display:none;">1.8713</span></div>
-                <div><span>0.4713</span>조</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>1.4</span>조</div>
-                <div><span>순이익</span></div>
+            <div>
+              <span>84</span>
+              승
             </div>
-            <div class="table">
-                <div><span style="display:none;">4.51</span></div>
-                <div><span>2.31</span>%</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>2.2</span>%</div>
-                <div><span>순이익률</span></div>
+            <div>
+              <span>0</span>
+              무
             </div>
-            <div class="table">
-                <div><span style="display:none;">2.14</span></div>
-                <div><span>1.5</span>조</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span>0.64</span>조</div>
-                <div><span>영업이익</span></div>
+            <div>
+              <span>66</span>
+              승
             </div>
+            <div><span>종합</span></div>
+          </div>
         </div>
-        <div class="content-page">
-            <div class="table total">
-                <div>총<span id="choice-total">0</span>명</div>
-                <div><span id="choice-red">0</span>명</div>
-                <div><span style="display:none;">0</span></div>
-                <div><span id="choice-blue">0</span>명</div>
-                <div><span>선택</span></div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>50</span>
+              전
             </div>
-        </div>
-        <div class="page">
-            <div class="text-box">
-                <p>해당 연구는 <span class="mark">통계적으로 잘못된 것</span>으로 드러났다.</p>
-                <p>귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을 입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의 승률은 같지만 50%는 아니다’ 를
-                    테스트했을
-                    때, 통계적으로 각각의 종목에서 두팀의 승률은 같지만 50%는 아니라는 것을 알 수 있다. 즉, 이 연구팀이 전체적으로 붉은 유니폼을 입은 팀이 승리할 확률이 55%로 높다고
-                    이야기하는
-                    것은 이 가설을 테스트한 것이라고 할 수 있는데, 이 가설에 의한 검정결과로 붉은색 유니폼을 입은 팀이 스포츠에서 이길 확률이 높다는 것은 <span
-                        class="mark">논리적으로 맞는 말이 아니다.</span></p>
-                <p>이를 제대로 테스트하려면 다음과 같은 가설을 세워야 한다.</p>
-                <p>귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을 입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의 승률은 다르고 그 확률이 50%도
-                    아니다’ 를
-                    테스트 해보면, 자유도 3에서 카이제곱 통계량은 0.3015를 갖고 p value 는 0.9597로 통계적으로 유의하지 않다.</p>
-                <p>따라서 <span class="mark">붉은 색 유니폼을 입은 팀이 승리할 확률이 높다는 것은 사실이 아니라고 할 수 있다.</span></p>
-                <p class="text-copyright"><a
-                        href="https://techntalk.tistory.com/entry/%E2%80%98%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%97%90%EC%84%9C-%EB%B6%89%EC%9D%80%EC%83%89-%EC%9C%A0%EB%8B%88%ED%8F%BC%EC%9D%84-%EC%9D%B4%EA%B8%B0%EB%A9%B4-%EC%8A%B9%EB%A6%AC%ED%95%A0-%ED%99%95%EB%A5%A0%EC%9D%B4-%EB%86%92%EC%95%84%EC%A7%84%EB%8B%A4%E2%80%99-%EB%8A%94-%EB%A7%90%EC%9D%80-%EC%82%AC%EC%8B%A4%EC%9D%BC%EA%B9%8C-%EC%B9%B4%EC%9D%B4%EA%B2%80%EC%A0%95"
-                        target="_blank">출처</a>
-                </p>
+            <div>
+              <span>19</span>
+              승
             </div>
-        </div>
-        <div id="bottom">
-            <div class="bottom-line">
-                <div>
-                    <span class="bottom-txt"></span>
-                    <span class="bottom-txt"></span>
-                </div>
-                <div>
-                    <span class="bottom-txt"></span>
-                    <span class="bottom-txt"></span>
-                </div>
+            <div>
+              <span>10</span>
+              무
             </div>
+            <div>
+              <span>21</span>
+              승
+            </div>
+            <div><span>우승</span></div>
+          </div>
         </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>49</span>
+              전
+            </div>
+            <div>
+              <span>25</span>
+              승
+            </div>
+            <div>
+              <span>6</span>
+              무
+            </div>
+            <div>
+              <span>18</span>
+              승
+            </div>
+            <div><span>야구</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>50</span>
+              전
+            </div>
+            <div>
+              <span>23</span>
+              승
+            </div>
+            <div>
+              <span>5</span>
+              무
+            </div>
+            <div>
+              <span>22</span>
+              승
+            </div>
+            <div><span>농구</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>49</span>
+              전
+            </div>
+            <div>
+              <span>20</span>
+              승
+            </div>
+            <div>
+              <span>12</span>
+              무
+            </div>
+            <div>
+              <span>17</span>
+              승
+            </div>
+            <div><span>축구</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>49</span>
+              전
+            </div>
+            <div>
+              <span>17</span>
+              승
+            </div>
+            <div>
+              <span>9</span>
+              무
+            </div>
+            <div>
+              <span>23</span>
+              승
+            </div>
+            <div><span>아이스하키</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>48</span>
+              전
+            </div>
+            <div>
+              <span>20</span>
+              승
+            </div>
+            <div>
+              <span>3</span>
+              무
+            </div>
+            <div>
+              <span>25</span>
+              승
+            </div>
+            <div><span>럭비</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>245</span>
+              전
+            </div>
+            <div>
+              <span>105</span>
+              승
+            </div>
+            <div>
+              <span>35</span>
+              무
+            </div>
+            <div>
+              <span>105</span>
+              승
+            </div>
+            <div><span>종합</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>18</span>
+              전
+            </div>
+            <div>
+              <span>8</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>10</span>
+              승
+            </div>
+            <div><span>우승</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>8</span>
+              전
+            </div>
+            <div>
+              <span>5</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>3</span>
+              승
+            </div>
+            <div><span>스타크래프트</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>19</span>
+              전
+            </div>
+            <div>
+              <span>6</span>
+              승
+            </div>
+            <div>
+              <span>1</span>
+              무
+            </div>
+            <div>
+              <span>12</span>
+              승
+            </div>
+            <div><span>해킹</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>21</span>
+              전
+            </div>
+            <div>
+              <span>12</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>9</span>
+              승
+            </div>
+            <div><span>과학퀴즈</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>17</span>
+              전
+            </div>
+            <div>
+              <span>8</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>9</span>
+              승
+            </div>
+            <div><span>인공지능</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              <span>11</span>
+              전
+            </div>
+            <div>
+              <span>5</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>6</span>
+              승
+            </div>
+            <div><span>LOL</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              <span>78</span>
+              전
+            </div>
+            <div>
+              <span>38</span>
+              승
+            </div>
+            <div>
+              <span>0</span>
+              무
+            </div>
+            <div>
+              <span>40</span>
+              승
+            </div>
+            <div><span>2022</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table">
+          <div class="table-container">
+            <div>
+              총
+              <span>26430</span>
+              일
+            </div>
+            <div>
+              <span>19776</span>
+              일
+            </div>
+            <div>
+              <span>588</span>
+              일 무
+            </div>
+            <div>
+              <span>6066</span>
+              일
+            </div>
+            <div><span>~19대 재직일</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div>
+              총
+              <span>20</span>
+              회
+            </div>
+            <div>
+              <span>15</span>
+              회
+            </div>
+            <div>
+              <span>1</span>
+              회 무
+            </div>
+            <div>
+              <span>4</span>
+              회
+            </div>
+            <div><span>취임 횟수</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div style="font-size: 2.9vw">
+              총
+              <span>32542553</span>
+              표
+            </div>
+            <div style="font-size: 2.9vw">
+              <span>16394815</span>
+              표
+            </div>
+            <div style="font-size: 2.9vw">
+              <span>1525300</span>
+              표
+            </div>
+            <div style="font-size: 2.9vw">
+              <span>16147738</span>
+              표
+            </div>
+            <div style="font-size: 2.9vw">
+              <span>20대 선거 유력 후보 특표수</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div><span style="display: none">288.26</span></div>
+            <div>
+              <span>109.8</span>
+              억
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>178.46</span>
+              억
+            </div>
+            <div><span>수익</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">50.39</span></div>
+            <div>
+              <span>31.07</span>
+              억
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>19.32</span>
+              억
+            </div>
+            <div><span>순이익</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">2.12</span></div>
+            <div><span>0.72</span></div>
+            <div><span style="display: none">0</span></div>
+            <div><span>1.4</span></div>
+            <div><span>희석주당이익</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">39.13</span></div>
+            <div>
+              <span>28.3</span>
+              %
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>10.83</span>
+              %
+            </div>
+            <div><span>순이익률</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">62.81</span></div>
+            <div>
+              <span>34.87</span>
+              억
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>27.94</span>
+              억
+            </div>
+            <div><span>영업이익</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div><span style="display: none">84.17</span></div>
+            <div>
+              <span>20.42</span>
+              조
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>63.75</span>
+              조
+            </div>
+            <div><span>수익</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">1.8713</span></div>
+            <div>
+              <span>0.4713</span>
+              조
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>1.4</span>
+              조
+            </div>
+            <div><span>순이익</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">4.51</span></div>
+            <div>
+              <span>2.31</span>
+              %
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>2.2</span>
+              %
+            </div>
+            <div><span>순이익률</span></div>
+          </div>
+        </div>
+        <div class="table">
+          <div class="table-container">
+            <div><span style="display: none">2.14</span></div>
+            <div>
+              <span>1.5</span>
+              조
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span>0.64</span>
+              조
+            </div>
+            <div><span>영업이익</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="content-page">
+        <div class="table total">
+          <div class="table-container">
+            <div>
+              총
+              <span id="choice-total">0</span>
+              명
+            </div>
+            <div>
+              <span id="choice-red">0</span>
+              명
+            </div>
+            <div><span style="display: none">0</span></div>
+            <div>
+              <span id="choice-blue">0</span>
+              명
+            </div>
+            <div><span>선택</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="page">
+        <div class="text-box">
+          <p>
+            해당 연구는
+            <span class="mark">통계적으로 잘못된 것</span>
+            으로 드러났다.
+          </p>
+          <p>
+            귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을
+            입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의
+            승률은 같지만 50%는 아니다’ 를 테스트했을 때, 통계적으로 각각의
+            종목에서 두팀의 승률은 같지만 50%는 아니라는 것을 알 수 있다. 즉, 이
+            연구팀이 전체적으로 붉은 유니폼을 입은 팀이 승리할 확률이 55%로
+            높다고 이야기하는 것은 이 가설을 테스트한 것이라고 할 수 있는데, 이
+            가설에 의한 검정결과로 붉은색 유니폼을 입은 팀이 스포츠에서 이길
+            확률이 높다는 것은
+            <span class="mark">논리적으로 맞는 말이 아니다.</span>
+          </p>
+          <p>이를 제대로 테스트하려면 다음과 같은 가설을 세워야 한다.</p>
+          <p>
+            귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을
+            입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의
+            승률은 다르고 그 확률이 50%도 아니다’ 를 테스트 해보면, 자유도 3에서
+            카이제곱 통계량은 0.3015를 갖고 p value 는 0.9597로 통계적으로
+            유의하지 않다.
+          </p>
+          <p>
+            따라서
+            <span class="mark">
+              붉은 색 유니폼을 입은 팀이 승리할 확률이 높다는 것은 사실이
+              아니라고 할 수 있다.
+            </span>
+          </p>
+          <p class="text-copyright">
+            <a
+              href="https://techntalk.tistory.com/entry/%E2%80%98%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%97%90%EC%84%9C-%EB%B6%89%EC%9D%80%EC%83%89-%EC%9C%A0%EB%8B%88%ED%8F%BC%EC%9D%84-%EC%9D%B4%EA%B8%B0%EB%A9%B4-%EC%8A%B9%EB%A6%AC%ED%95%A0-%ED%99%95%EB%A5%A0%EC%9D%B4-%EB%86%92%EC%95%84%EC%A7%84%EB%8B%A4%E2%80%99-%EB%8A%94-%EB%A7%90%EC%9D%80-%EC%82%AC%EC%8B%A4%EC%9D%BC%EA%B9%8C-%EC%B9%B4%EC%9D%B4%EA%B2%80%EC%A0%95"
+              target="_blank">
+              출처
+            </a>
+          </p>
+        </div>
+      </div>
+      <div id="bottom">
+        <div class="bottom-line">
+          <div>
+            <span class="bottom-txt"></span>
+            <span class="bottom-txt"></span>
+          </div>
+          <div>
+            <span class="bottom-txt"></span>
+            <span class="bottom-txt"></span>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="vanilla-tilt.js"></script>
     <script type="text/javascript" src="./script.js"></script>
-</body>
-
+  </body>
 </html>

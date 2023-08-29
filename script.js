@@ -141,9 +141,10 @@ const title = {
     '대학 스포츠 대항전',
     '리그 오브 레전드',
     '카트라이더',
-    '한국 정치 진영',
+    '전자제품',
     '콜라',
-    '한국 전자제품',
+    'CPU',
+    '정치 진영',
   ],
   red: [
     'FC 서울',
@@ -156,10 +157,11 @@ const title = {
     '고려대학교',
     '포항공대',
     '레드 진영',
-    '레드',
-    '보수당',
-    '코카콜라',
+    '레드팀',
     'LG전자',
+    '코카콜라',
+    'AMD',
+    '보수당',
     'Red',
   ],
   mid: ['vs'],
@@ -174,10 +176,11 @@ const title = {
     '연세대학교',
     '카이스트',
     '블루 진영',
-    '블루',
-    '민주당',
-    '펩시',
+    '블루팀',
     '삼성전자',
+    '펩시',
+    'Intel',
+    '민주당',
     'Blue',
   ],
   last: ['　', '　', '　', '　', '　'],
@@ -185,7 +188,7 @@ const title = {
 const categoryBox = document.querySelector('#category-box');
 
 let categoryList = '';
-for (let i = 0; i < 14; i++) {
+for (let i = 0; i < 15; i++) {
   categoryList += `
     <div class="category">
     <div class="category-container">
@@ -229,19 +232,20 @@ const pbottom = [
 ];
 const bottom = [
   '2023년 2월 기준 K리그 경인 더비 전적',
-  '2023년 4월 22일 기준 K리그 동해안 더비 전적',
-  'KBO 리그 라이벌 매치 88고속도로 씨리즈 전적',
-  '2023년 4월 기준 KBO 리그 라이벌 매치 낙동강 시리즈 전적',
+  '2023년 4월 기준 K리그 동해안 더비 전적',
+  'KBO 리그 88고속도로 씨리즈 전적',
+  '2023년 4월 기준 KBO 리그 낙동강 시리즈 전적',
   '2022-23시즌 기준 한국프로농구 전자 더비 전적',
   '2022-23시즌 기준 한국프로농구 현대가 더비 전적',
   '2022-23시즌 기준 V-리그 공사더비 전적',
-  '대학교 스포츠 대항전 연고전-고연전',
+  '대학교 스포츠 대항전 연고전-고연전 1965 - 2022',
   '대학교 스포츠 대항전 카포전-포카전 2002 - 2022',
-  '리그 오브 레전드 월드 챔피언십',
-  '카트라이더 리그',
+  '리그 오브 레전드 2022년 리그별 전적',
+  '2022 카트라이더 리그 팀전 전적',
+  '대한민국 대표 전자 기업',
+  '세기의 라이벌 콜라 국내 성적',
+  'CPU 라이벌 국내 성적',
   '대한민국의 정치 진영',
-  '세기의 라이벌 2023년 1분기 재무 비교',
-  '대한민국 대표 전자 기업 2023년 1분기 재무 비교',
   '당신의 선택 --- RED ---',
   '당신의 선택 --- BLUE ---',
 ];
@@ -390,14 +394,14 @@ topPrev.addEventListener('click', () => {
 bottomArea.addEventListener('click', () => {
   if (container.classList.contains('bottom-click')) {
     updateScore();
-    updateTitle(14);
-    if (contentPages[14].classList.contains('red-clicked')) {
-      updateBottom(14);
-    } else {
+    updateTitle(15);
+    if (contentPages[15].classList.contains('red-clicked')) {
       updateBottom(15);
+    } else {
+      updateBottom(16);
     }
     hideContentPages();
-    showContentPage(14);
+    showContentPage(15);
     categoryBox.classList.add('page-show');
     addBottomClick();
   }

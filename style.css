@@ -144,6 +144,9 @@ body {
   transition: 0.5s;
   opacity: 0;
   padding-inline: 14px;
+  position: sticky;
+  z-index: 999;
+  top: 0;
 }
 .top-container {
   display: flex;

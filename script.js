@@ -304,7 +304,8 @@ function addBottomClick() {
 
 //top 화살표 버튼 클릭 이벤트
 topPrev.addEventListener('click', () => {
-  topNext.innerHTML = '→';
+  topNext.style.opacity = 1;
+  topNext.style.cursor = 'pointer';
   if (categoryBox.classList.contains('page-show')) {
     showPage(currentPageIndex);
     categoryBox.classList.remove('page-show');
@@ -328,12 +329,13 @@ topPrev.addEventListener('click', () => {
 });
 
 topNext.addEventListener('click', () => {
-  if (currentPageIndex == 1) {
-    topNext.innerHTML = '　';
-  }
-  if (currentPageIndex < pages.length - 1) {
+  if (currentPageIndex < pages.length - 1 && topNext.style.opacity == '1') {
     currentPageIndex++;
     showPage(currentPageIndex);
+  }
+  if (currentPageIndex == pages.length - 1) {
+    topNext.style.opacity = 0;
+    topNext.style.cursor = 'default';
   }
   addBottomClick();
 });
@@ -342,7 +344,8 @@ function showContentPage(index) {
   //카테고리 숨기기
   setTimeout(() => {
     categoryBox.style.opacity = 0;
-    topNext.innerHTML = '　';
+    topNext.style.opacity = 0;
+    topNext.style.cursor = 'default';
   }, 200);
   setTimeout(() => {
     categoryBox.style.display = 'none';

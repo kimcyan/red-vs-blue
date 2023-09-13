@@ -200,6 +200,10 @@ for (let i = 0; i < 15; i++) {
     </div>
     </div>`;
 }
+categoryList += `
+    <p class="text-bottom">
+      <span class="mark bottom-next-btn">연구의 진실 확인하기→</span>
+    </p>`;
 categoryBox.innerHTML = categoryList;
 categoryBox.addEventListener('click', () => {
   categoryBox.classList.add('page-show');
@@ -288,6 +292,7 @@ function showPage(pageIndex) {
 
 const categories = document.querySelectorAll('.category');
 const contentPages = document.querySelectorAll('.content-page');
+const bottomNext = document.querySelectorAll('.bottom-next-btn');
 
 //category 리스트의 마지막 페이지 이벤트
 function addBottomClick() {
@@ -302,7 +307,7 @@ function addBottomClick() {
   }
 }
 
-//top 화살표 버튼 클릭 이벤트
+//이전 페이지 이벤트
 topPrev.addEventListener('click', () => {
   topNext.style.opacity = 1;
   topNext.style.cursor = 'pointer';
@@ -327,8 +332,8 @@ topPrev.addEventListener('click', () => {
   }
   addBottomClick();
 });
-
-topNext.addEventListener('click', () => {
+//다음 페이지 이벤트
+function toNextPage() {
   if (currentPageIndex < pages.length - 1 && topNext.style.opacity == '1') {
     currentPageIndex++;
     showPage(currentPageIndex);
@@ -338,6 +343,10 @@ topNext.addEventListener('click', () => {
     topNext.style.cursor = 'default';
   }
   addBottomClick();
+}
+topNext.addEventListener('click', toNextPage);
+bottomNext.forEach((nextBtn) => {
+  nextBtn.addEventListener('click', toNextPage);
 });
 
 function showContentPage(index) {

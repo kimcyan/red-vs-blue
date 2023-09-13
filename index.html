@@ -352,7 +352,11 @@
           <p class="text-info">
             <span>
               글쓴이
-              <span class="mark">Scieng office</span>
+              <a
+                target="_blank"
+                href="http://www.scieng.net/column/6496?page=9">
+                Scieng office
+              </a>
             </span>
             <span>
               등록일
@@ -413,8 +417,8 @@
             </span>
             ”며 아쉬움을 나타냈다.
           </p>
-          <p class="text-copyright">
-            <a href="http://www.scieng.net/column/6496?page=9">출처</a>
+          <p class="text-bottom">
+            <span class="mark bottom-next-btn">분석 결과 확인하기→</span>
           </p>
         </div>
       </div>
@@ -1660,23 +1664,68 @@
             으로 드러났다.
           </p>
           <p>
-            귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을
-            입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의
-            승률은 같지만 50%는 아니다’ 를 테스트했을 때, 통계적으로 각각의
-            종목에서 두팀의 승률은 같지만 50%는 아니라는 것을 알 수 있다. 즉, 이
-            연구팀이 전체적으로 붉은 유니폼을 입은 팀이 승리할 확률이 55%로
-            높다고 이야기하는 것은 이 가설을 테스트한 것이라고 할 수 있는데, 이
-            가설에 의한 검정결과로 붉은색 유니폼을 입은 팀이 스포츠에서 이길
-            확률이 높다는 것은
-            <span class="mark">논리적으로 맞는 말이 아니다.</span>
+            연구의 진실을 확인하기 위해 Russell Hill과 Robert Barton이 공개한
+            데이터를 다음과 같이 정리했다.
           </p>
-          <p>이를 제대로 테스트하려면 다음과 같은 가설을 세워야 한다.</p>
+          <table class="truth-table">
+            <thead>
+              <tr>
+                <th rowspan="2">종목</th>
+                <th colspan="2">승리한 유니폼</th>
+                <th rowspan="2">합계</th>
+              </tr>
+              <tr>
+                <th>붉은 색</th>
+                <th>푸른 색</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="first-col">권투(B)</td>
+                <td>147</td>
+                <td>120</td>
+                <td>267</td>
+              </tr>
+              <tr>
+                <td class="first-col">태권도(TaeKwon)</td>
+                <td>45</td>
+                <td>35</td>
+                <td>80</td>
+              </tr>
+              <tr>
+                <td class="first-col">레슬링 그레코로만형(GW)</td>
+                <td>25</td>
+                <td>23</td>
+                <td>48</td>
+              </tr>
+              <tr>
+                <td class="first-col">레슬링 자유형(FW)</td>
+                <td>27</td>
+                <td>24</td>
+                <td>51</td>
+              </tr>
+              <tr class="tr-total">
+                <td class="first-col">합계</td>
+                <td>244</td>
+                <td>202</td>
+                <td>446</td>
+              </tr>
+              <tr>
+                <td class="first-col">%</td>
+                <td>55%</td>
+                <td>45%</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>붉은 색 유니폼의 승률이 55%로 더 높게 나타난 것으로 보인다.</p>
           <p>
-            귀무가설 ‘각각의 종목에서 빨간색 유니폼을 입은 팀과 파란색 유니폼을
-            입은 팀의 승률은 50%로 같다’ vs 대립가설 ‘각각의 종목에서 두팀의
-            승률은 다르고 그 확률이 50%도 아니다’ 를 테스트 해보면, 자유도 3에서
-            카이제곱 통계량은 0.3015를 갖고 p value 는 0.9597로 통계적으로
-            유의하지 않다.
+            그러나 이를
+            <span class="mark">카이제곱 검정</span>
+            으로 분석한 결과, 자유도 3에서 카이제곱 통계량은 0.288이 나왔으며
+            p-값은 0.9624가 나왔다. p-값이 0.05 이상일 경우 관찰된 데이터가
+            우연에 의한 것으로 판단되기 때문에, 이 데이터로부터 얻은 결과는
+            <span class="mark">통계적으로 유의미하지 않다.</span>
           </p>
           <p>
             따라서
@@ -1684,13 +1733,6 @@
               붉은 색 유니폼을 입은 팀이 승리할 확률이 높다는 것은 사실이
               아니라고 할 수 있다.
             </span>
-          </p>
-          <p class="text-copyright">
-            <a
-              href="https://techntalk.tistory.com/entry/%E2%80%98%EC%8A%A4%ED%8F%AC%EC%B8%A0%EC%97%90%EC%84%9C-%EB%B6%89%EC%9D%80%EC%83%89-%EC%9C%A0%EB%8B%88%ED%8F%BC%EC%9D%84-%EC%9D%B4%EA%B8%B0%EB%A9%B4-%EC%8A%B9%EB%A6%AC%ED%95%A0-%ED%99%95%EB%A5%A0%EC%9D%B4-%EB%86%92%EC%95%84%EC%A7%84%EB%8B%A4%E2%80%99-%EB%8A%94-%EB%A7%90%EC%9D%80-%EC%82%AC%EC%8B%A4%EC%9D%BC%EA%B9%8C-%EC%B9%B4%EC%9D%B4%EA%B2%80%EC%A0%95"
-              target="_blank">
-              출처
-            </a>
           </p>
         </div>
       </div>

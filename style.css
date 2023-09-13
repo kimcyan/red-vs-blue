@@ -262,15 +262,24 @@ body {
   color: #1b1b1b;
   mix-blend-mode: luminosity;
 }
+.text-bottom {
+  text-align: right;
+  max-width: 960px;
+  font-size: 20px;
+  font-weight: 500;
+  margin: auto;
+  padding: 0 36px;
+  margin-block: 36px;
+}
+.bottom-next-btn {
+  mix-blend-mode: normal;
+}
 .text-info {
   font-size: 16px;
   text-align: right;
 }
 .text-info > span {
   display: block;
-}
-.text-copyright {
-  text-align: right;
 }
 .table {
   border-bottom: 1px solid #1b1b1b;
@@ -355,7 +364,25 @@ body {
   display: none;
   transition: 0.2s;
 }
-
+/* 진실 페이지 표 */
+.truth-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.first-col {
+  width: 30%;
+  text-align: left;
+}
+.truth-table tr {
+  border-block: 1px solid #1b1b1b;
+}
+.truth-table thead {
+  border-block: 2px solid #1b1b1b;
+}
+.tr-total {
+  border-top: 2px solid #1b1b1b;
+}
 @media screen and (max-width: 980px) {
   #top-nav,
   .category {

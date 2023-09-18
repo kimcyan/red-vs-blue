@@ -205,9 +205,14 @@ categoryList += `
       <span class="mark bottom-next-btn">연구의 진실 확인하기→</span>
     </p>`;
 categoryBox.innerHTML = categoryList;
-categoryBox.addEventListener('click', () => {
-  categoryBox.classList.add('page-show');
-  addBottomClick();
+
+const categories = document.querySelectorAll('.category');
+
+categories.forEach((category) => {
+  category.addEventListener('click', () => {
+    categoryBox.classList.add('page-show');
+    addBottomClick();
+  });
 });
 
 const titleArea = document.querySelector('#title');
@@ -219,13 +224,11 @@ function updatePTitle(index) {
   Rtitle.textContent = ptitle.red[index];
   Mtitle.textContent = ptitle.mid[index];
   Btitle.textContent = ptitle.blue[index];
-  console.log('1' + Rtitle.textContent);
 }
 function updateTitle(index) {
   Rtitle.textContent = title.red[index];
   Mtitle.textContent = 'vs';
   Btitle.textContent = title.blue[index];
-  console.log('2' + Rtitle.textContent);
 }
 
 //bottom 데이터
@@ -271,6 +274,7 @@ const topNext = document.querySelector('#top-next');
 let currentPageIndex = 0;
 
 function showPage(pageIndex) {
+  console.log(`showPage: ${pageIndex}`);
   pages.forEach((page, index) => {
     updatePTitle(pageIndex);
     updatePBottom(pageIndex);
@@ -290,27 +294,42 @@ function showPage(pageIndex) {
   });
 }
 
-const categories = document.querySelectorAll('.category');
 const contentPages = document.querySelectorAll('.content-page');
 const bottomNext = document.querySelectorAll('.bottom-next-btn');
+const bottomToFirst = document.querySelector('#bottom-prev-btn');
 
 //category 리스트의 마지막 페이지 이벤트
 function addBottomClick() {
-  console.log('bottomclickevent1');
+  console.log('bottomclickevent1 start');
   console.log(currentPageIndex);
   if (currentPageIndex === 1 && !categoryBox.classList.contains('page-show')) {
-    console.log('bottomclickevent2');
+    console.log('bottomclickevent2 pageindex = 1');
     container.classList.add('bottom-click');
   } else {
     console.log('bottomclickevent3');
     container.classList.remove('bottom-click');
   }
 }
+//첫 페이지로 돌아가는 함수
+function toFirstPage() {
+  topArea.style.opacity = '0';
+  bottomArea.style.opacity = '0';
+  redArea.style.zIndex = '1';
+  midArea.style.zIndex = '0';
+  blueArea.style.zIndex = '2';
+  blueArea.style.right = '-100%';
+  midArea.style.right = '-150%';
+  setTimeout(() => {
+    blueArea.style.transform = 'skew(-16deg)';
+    container.classList.remove('after');
+  }, 200);
+}
 
 //이전 페이지 이벤트
 topPrev.addEventListener('click', () => {
   topNext.style.opacity = 1;
   topNext.style.cursor = 'pointer';
+  console.log(`topPrev clicked / ${currentPageIndex}`);
   if (categoryBox.classList.contains('page-show')) {
     showPage(currentPageIndex);
     categoryBox.classList.remove('page-show');
@@ -318,22 +337,20 @@ topPrev.addEventListener('click', () => {
     currentPageIndex--;
     showPage(currentPageIndex);
   } else {
-    topArea.style.opacity = '0';
-    bottomArea.style.opacity = '0';
-    redArea.style.zIndex = '1';
-    midArea.style.zIndex = '0';
-    blueArea.style.zIndex = '2';
-    blueArea.style.right = '-100%';
-    midArea.style.right = '-150%';
-    setTimeout(() => {
-      blueArea.style.transform = 'skew(-16deg)';
-      container.classList.remove('after');
-    }, 200);
+    toFirstPage();
   }
+  addBottomClick();
+});
+bottomToFirst.addEventListener('click', () => {
+  topNext.style.opacity = 1;
+  topNext.style.cursor = 'pointer';
+  currentPageIndex = 0;
+  toFirstPage();
   addBottomClick();
 });
 //다음 페이지 이벤트
 function toNextPage() {
+  console.log(`toNextPage index: ${currentPageIndex}`);
   if (currentPageIndex < pages.length - 1 && topNext.style.opacity == '1') {
     currentPageIndex++;
     showPage(currentPageIndex);
@@ -344,10 +361,10 @@ function toNextPage() {
   }
   addBottomClick();
 }
-topNext.addEventListener('click', toNextPage);
 bottomNext.forEach((nextBtn) => {
   nextBtn.addEventListener('click', toNextPage);
 });
+topNext.addEventListener('click', toNextPage);
 
 function showContentPage(index) {
   //카테고리 숨기기

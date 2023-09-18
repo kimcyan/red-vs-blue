@@ -143,7 +143,7 @@ body {
   font-weight: 700;
   transition: 0.5s;
   opacity: 0;
-  padding-inline: 14px;
+  padding-inline: 32px;
   position: sticky;
   z-index: 999;
   top: 0;
@@ -271,7 +271,11 @@ body {
   padding: 0 36px;
   margin-block: 36px;
 }
-.bottom-next-btn {
+.text-bottom-prev {
+  text-align: left;
+}
+.bottom-next-btn,
+#bottom-prev-btn {
   mix-blend-mode: normal;
 }
 .text-info {

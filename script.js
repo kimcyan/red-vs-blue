@@ -189,6 +189,19 @@ const categoryBox = document.querySelector('#category-box');
 
 let categoryList = '';
 for (let i = 0; i < 15; i++) {
+  if(i == 5) {
+    categoryList += `
+    <div class="category">
+    <div class="category-container">
+    <div class="info">${title.first[i]}</div>
+    <div class="red-team" style="letter-spacing: -1px;">${title.red[i]}</div>
+    <div id="mid-text">vs</div>
+    <div class="blue-team">${title.blue[i]}</div>
+    <div class="next-button">　</div>
+    </div>
+    </div>`;
+  }
+  else{
   categoryList += `
     <div class="category">
     <div class="category-container">
@@ -199,6 +212,7 @@ for (let i = 0; i < 15; i++) {
     <div class="next-button">　</div>
     </div>
     </div>`;
+  }
 }
 categoryList += `
     <p class="text-bottom">

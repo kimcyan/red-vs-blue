@@ -189,7 +189,7 @@ const categoryBox = document.querySelector('#category-box');
 
 let categoryList = '';
 for (let i = 0; i < 15; i++) {
-  if(i == 5) {
+  if (i == 5) {
     categoryList += `
     <div class="category">
     <div class="category-container">
@@ -200,9 +200,8 @@ for (let i = 0; i < 15; i++) {
     <div class="next-button">　</div>
     </div>
     </div>`;
-  }
-  else{
-  categoryList += `
+  } else {
+    categoryList += `
     <div class="category">
     <div class="category-container">
     <div class="info">${title.first[i]}</div>
@@ -468,3 +467,36 @@ VanillaTilt.init(categories, {
   axis: 'y',
   reverse: true,
 });
+
+// 설명 페이지 논모달 팝업 이벤트
+const marks = document.querySelectorAll('.click-info');
+const popups = document.querySelectorAll('.popup-wrap');
+const popupCloseBtns = document.querySelectorAll('.popup-close');
+
+marks.forEach((mark, index) => {
+  mark.addEventListener('click', () => {
+    if (!popups[index].classList.contains('show-popup')) {
+      openPopup(mark, popups[index]);
+    }
+  });
+});
+
+popupCloseBtns.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    closePopup(popups[index]);
+  });
+});
+
+function openPopup(element, popup) {
+  const elementRect = element.getBoundingClientRect();
+  const textBoxRect = document
+    .querySelector('.text-box')
+    .getBoundingClientRect();
+  const popupHeight = 200;
+  const popupWidth = 212;
+
+  popup.classList.add('show-popup');
+}
+function closePopup(popup) {
+  popup.classList.remove('show-popup');
+}

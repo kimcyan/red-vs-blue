@@ -241,7 +241,6 @@ body {
 .text-box::-webkit-scrollbar {
   display: none;
 }
-.text-box a,
 .mark {
   background-color: #1b1b1b;
   color: white;
@@ -250,12 +249,50 @@ body {
   cursor: pointer;
   mix-blend-mode: multiply;
 }
-.text-box a:hover,
 .mark:hover {
   background-color: #ababab;
   color: #1b1b1b;
   mix-blend-mode: luminosity;
 }
+
+/*팝업 관련*/
+.popup-contain-box {
+  position: relative;
+}
+.popup-wrap {
+  background-color: #1b1b1b;
+  font-size: 16px;
+  color: #f1f1f1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  width: 180px;
+  display: none;
+  z-index: 1;
+}
+.popup-txt {
+  line-height: 1.2;
+  font-weight: 400;
+  text-align: left;
+}
+.popup-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.popup-link {
+  color: #1dc1dd;
+  text-decoration: none;
+}
+.popup-close {
+  color: #999;
+  cursor: pointer;
+}
+.show-popup {
+  display: flex;
+}
+
 .text-bottom {
   text-align: right;
   max-width: 960px;

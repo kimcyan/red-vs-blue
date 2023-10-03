@@ -325,6 +325,7 @@ function addBottomClick() {
 }
 //첫 페이지로 돌아가는 함수
 function toFirstPage() {
+  closeAllPopup();
   topArea.style.opacity = '0';
   bottomArea.style.opacity = '0';
   redArea.style.zIndex = '1';
@@ -340,6 +341,7 @@ function toFirstPage() {
 
 //이전 페이지 이벤트
 topPrev.addEventListener('click', () => {
+  closeAllPopup();
   topNext.style.opacity = 1;
   topNext.style.cursor = 'pointer';
   console.log(`topPrev clicked / ${currentPageIndex}`);
@@ -363,6 +365,7 @@ bottomToFirst.addEventListener('click', () => {
 });
 //다음 페이지 이벤트
 function toNextPage() {
+  closeAllPopup();
   console.log(`toNextPage index: ${currentPageIndex}`);
   if (currentPageIndex < pages.length - 1 && topNext.style.opacity == '1') {
     currentPageIndex++;
@@ -476,7 +479,7 @@ const popupCloseBtns = document.querySelectorAll('.popup-close');
 marks.forEach((mark, index) => {
   mark.addEventListener('click', () => {
     if (!popups[index].classList.contains('show-popup')) {
-      openPopup(mark, popups[index]);
+      openPopup(mark, popups[index], index);
     }
   });
 });
@@ -487,16 +490,39 @@ popupCloseBtns.forEach((button, index) => {
   });
 });
 
-function openPopup(element, popup) {
+const textBox = document.querySelectorAll('.text-box')
+
+function openPopup(element, popup, index) {
   const elementRect = element.getBoundingClientRect();
-  const textBoxRect = document
-    .querySelector('.text-box')
-    .getBoundingClientRect();
-  const popupHeight = 200;
   const popupWidth = 212;
+  let textBoxRect = 0;
+  if(index < 5){
+    textBoxRect = textBox[0].getBoundingClientRect();
+  }else{
+    textBoxRect = textBox[1].getBoundingClientRect();
+  }
+
+  if(elementRect.width >= textBoxRect.width - 90){
+    popup.style.right = 'initial'
+    popup.style.left = 'initial'
+  }
+  else if(elementRect.left + popupWidth > textBoxRect.right){
+    popup.style.right = 0;
+    popup.style.left = 'initial'
+  }
+  else {
+    popup.style.right = 'initial'
+    popup.style.left = '0'
+  }
 
   popup.classList.add('show-popup');
 }
 function closePopup(popup) {
   popup.classList.remove('show-popup');
+}
+
+function closeAllPopup() {
+  popups.forEach((popup) => [
+    closePopup(popup)
+  ])
 }

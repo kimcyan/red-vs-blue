@@ -249,7 +249,7 @@ body {
   cursor: pointer;
   mix-blend-mode: multiply;
 }
-.mark:hover {
+.mark:hover, #bottom-prev-btn:hover {
   background-color: #ababab;
   color: #1b1b1b;
   mix-blend-mode: luminosity;
@@ -291,6 +291,7 @@ body {
 }
 .show-popup {
   display: flex;
+  left: 0;
 }
 
 .text-bottom {
@@ -412,11 +413,14 @@ body {
 .truth-table tr {
   border-block: 1px solid #1b1b1b;
 }
+.truth-table tr:nth-last-child(1) {
+  border-bottom: 2px solid #1b1b1b;
+}
 .truth-table thead {
   border-block: 2px solid #1b1b1b;
 }
 .tr-total {
-  border-top: 2px solid #1b1b1b;
+  border-top: 2px solid #1b1b1b !important;
 }
 @media screen and (max-width: 980px) {
   #top-nav,

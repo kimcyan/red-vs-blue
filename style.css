@@ -249,7 +249,8 @@ body {
   cursor: pointer;
   mix-blend-mode: multiply;
 }
-.mark:hover, #bottom-prev-btn:hover {
+.mark:hover,
+#bottom-prev-btn:hover {
   background-color: #ababab;
   color: #1b1b1b;
   mix-blend-mode: luminosity;
@@ -300,7 +301,6 @@ body {
   font-size: 20px;
   font-weight: 500;
   margin: auto;
-  padding: 0 36px;
   margin-block: 36px;
 }
 .text-bottom-prev {

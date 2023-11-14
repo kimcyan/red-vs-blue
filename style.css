@@ -234,7 +234,7 @@ body {
   padding: 0 36px;
   line-height: 1.7;
   overflow-y: auto;
-  height: 100%;
+  max-height: calc(100% - 2.9vw - 20px);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }

@@ -40,11 +40,11 @@ blueArea.addEventListener('click', () => {
     blueArea.style.right = '0%';
     blueArea.style.transform = 'skew(0)';
     startPage();
-    if (contentPages[11].classList.contains('red-clicked')) {
-      contentPages[11].classList.remove('red-clicked');
+    if (contentPages[15].classList.contains('red-clicked')) {
+      contentPages[15].classList.remove('red-clicked');
       scoreRed--;
     }
-    contentPages[11].classList.add('blue-clicked');
+    contentPages[15].classList.add('blue-clicked');
     scoreBlue++;
   }
 });
@@ -54,11 +54,11 @@ redArea.addEventListener('click', () => {
     blueArea.style.transform = 'skew(0)';
     midArea.style.transform = 'skew(0)';
     startPage();
-    if (contentPages[11].classList.contains('blue-clicked')) {
-      contentPages[11].classList.remove('blue-clicked');
+    if (contentPages[15].classList.contains('blue-clicked')) {
+      contentPages[15].classList.remove('blue-clicked');
       scoreBlue--;
     }
-    contentPages[11].classList.add('red-clicked');
+    contentPages[15].classList.add('red-clicked');
     scoreRed++;
   }
 });
@@ -441,8 +441,10 @@ bottomArea.addEventListener('click', () => {
     updateScore();
     updateTitle(15);
     if (contentPages[15].classList.contains('red-clicked')) {
+      console.log('red-clicked');
       updateBottom(15);
     } else {
+      console.log('blue-clicked');
       updateBottom(16);
     }
     hideContentPages();
@@ -490,29 +492,27 @@ popupCloseBtns.forEach((button, index) => {
   });
 });
 
-const textBox = document.querySelectorAll('.text-box')
+const textBox = document.querySelectorAll('.text-box');
 
 function openPopup(element, popup, index) {
   const elementRect = element.getBoundingClientRect();
   const popupWidth = 212;
   let textBoxRect = 0;
-  if(index < 5){
+  if (index < 5) {
     textBoxRect = textBox[0].getBoundingClientRect();
-  }else{
+  } else {
     textBoxRect = textBox[1].getBoundingClientRect();
   }
 
-  if(elementRect.width >= textBoxRect.width - 90){
-    popup.style.right = 'initial'
-    popup.style.left = 'initial'
-  }
-  else if(elementRect.left + popupWidth > textBoxRect.right){
+  if (elementRect.width >= textBoxRect.width - 90) {
+    popup.style.right = 'initial';
+    popup.style.left = 'initial';
+  } else if (elementRect.left + popupWidth > textBoxRect.right) {
     popup.style.right = 0;
-    popup.style.left = 'initial'
-  }
-  else {
-    popup.style.right = 'initial'
-    popup.style.left = '0'
+    popup.style.left = 'initial';
+  } else {
+    popup.style.right = 'initial';
+    popup.style.left = '0';
   }
 
   popup.classList.add('show-popup');
@@ -522,7 +522,5 @@ function closePopup(popup) {
 }
 
 function closeAllPopup() {
-  popups.forEach((popup) => [
-    closePopup(popup)
-  ])
+  popups.forEach((popup) => [closePopup(popup)]);
 }
